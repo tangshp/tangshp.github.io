@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>gcc01</title>
+      <link href="/2021/12/19/gcc01/"/>
+      <url>/2021/12/19/gcc01/</url>
+      
+        <content type="html"><![CDATA[<h1 id="编译参数"><a href="#编译参数" class="headerlink" title="编译参数"></a>编译参数</h1><h2 id="fno-common"><a href="#fno-common" class="headerlink" title="-fno-common"></a><code>-fno-common</code></h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 操作系统 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> gcc编译 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>《链接、装载与库》-第三章-目标文件中有什么</title>
       <link href="/2021/12/17/%E9%93%BE%E6%8E%A5%E3%80%81%E8%A3%85%E8%BD%BD%E4%B8%8E%E5%BA%933/"/>
       <url>/2021/12/17/%E9%93%BE%E6%8E%A5%E3%80%81%E8%A3%85%E8%BD%BD%E4%B8%8E%E5%BA%933/</url>
