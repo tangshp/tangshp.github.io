@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>STM32-F103ZET6-03-GPIO-KEY_BEEP</title>
+      <link href="/2022/02/28/Embedded-System-00/STM32-F103ZET6-03-GPIO-KEY-BEEP/"/>
+      <url>/2022/02/28/Embedded-System-00/STM32-F103ZET6-03-GPIO-KEY-BEEP/</url>
+      
+        <content type="html"><![CDATA[<h1 id="端口编号记录"><a href="#端口编号记录" class="headerlink" title="端口编号记录"></a>端口编号记录</h1><p>为了<strong>避免重复</strong>查询<code>STM32F103ZET6</code>精英板的原理图,在此记录常用<strong>端口编号、功能、配置</strong></p><div class="table-container"><table><thead><tr><th style="text-align:center">功能</th><th style="text-align:center">端口</th><th style="text-align:center">配置</th><th style="text-align:center">初始状态</th></tr></thead><tbody><tr><td style="text-align:center"><code>LED0</code></td><td style="text-align:center"><code>PB5</code></td><td style="text-align:center"><strong>推挽输出</strong>-<strong>高电平</strong></td><td style="text-align:center"><strong>熄灭</strong></td></tr><tr><td style="text-align:center"><code>LED1</code></td><td style="text-align:center"><code>PE5</code></td><td style="text-align:center"><strong>推挽输出</strong>-<strong>高电平</strong></td><td style="text-align:center"><strong>熄灭</strong></td></tr><tr><td style="text-align:center"><code>BEEP</code></td><td style="text-align:center"><code>PB8</code></td><td style="text-align:center"><strong>推挽输出</strong>-<strong>低电平</strong></td><td style="text-align:center"><strong>静音</strong></td></tr><tr><td style="text-align:center"><code>KEY_WK</code></td><td style="text-align:center"><code>PA0</code></td><td style="text-align:center"><strong>输入下拉</strong></td><td style="text-align:center"><code>NULL</code></td></tr><tr><td style="text-align:center"><code>KEY0</code></td><td style="text-align:center"><code>PE4</code></td><td style="text-align:center"><strong>输入上拉</strong></td><td style="text-align:center"><code>NULL</code></td></tr><tr><td style="text-align:center"><code>KEY1</code></td><td style="text-align:center"><code>PE3</code></td><td style="text-align:center"><strong>输入上拉</strong></td><td style="text-align:center"><code>NULL</code></td></tr></tbody></table></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 嵌入式 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> STM32 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>STM32-F103ZET6-03-GPIO-Bit_Band</title>
       <link href="/2022/02/27/Embedded-System-00/STM32-F103ZET6-03-GPIO-Bit-Band/"/>
       <url>/2022/02/27/Embedded-System-00/STM32-F103ZET6-03-GPIO-Bit-Band/</url>
