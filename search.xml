@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>STM32-F103ZET6-09-USART</title>
+      <link href="/2022/03/09/Embedded-System-00/STM32-F103ZET6-09-USART/"/>
+      <url>/2022/03/09/Embedded-System-00/STM32-F103ZET6-09-USART/</url>
+      
+        <content type="html"><![CDATA[<h1 id="通信接口背景知识"><a href="#通信接口背景知识" class="headerlink" title="通信接口背景知识"></a>通信接口背景知识</h1><h2 id="通信的两种方式"><a href="#通信的两种方式" class="headerlink" title="通信的两种方式"></a>通信的两种方式</h2><h3 id="并行通信"><a href="#并行通信" class="headerlink" title="并行通信"></a><strong>并行通信</strong></h3><ul><li><strong>传输原理</strong>：<strong>数据各个位同时传输</strong></li><li><strong>优点</strong>：<strong>速度快</strong></li><li><strong>缺点</strong>：<strong>占用引脚资源多</strong></li></ul><p><img src="/images/Parallel_Transmission.jpg" alt="Parallel_Transmission"></p><h3 id="串行通信"><a href="#串行通信" class="headerlink" title="串行通信"></a><strong>串行通信</strong></h3><ul><li><strong>传输原理</strong>：<strong>数据按位顺序传输</strong></li><li><strong>优点</strong>：<strong>占用引脚资源少</strong></li><li><strong>缺点</strong>：<strong>速度相对较慢</strong><br><img src="/images/serial_communication.png" alt="serial communication"></li></ul><p><strong>串行通信</strong>按照<strong>数据传送方向</strong>分为</p><ul><li><strong>单工</strong>:<strong>数据传输只支持数据在一个方向上传输</strong></li><li><strong>半双工</strong>：<strong>允许数据在两个方向上传输,但是,在某一时刻,只允许数据在一个方向上传输，它实际上是一种切换方向的单工通信</strong></li><li><strong>全双工</strong>：<strong>允许数据同时在两个方向上传输，因此，全双工通信是两个单工通信方式的结合，它要求发送设备和接收设备都有独立的接收和发送能力</strong>。<br><img src="/images/comDirection.png" alt="数据传输方向"></li></ul><p><strong>串行通信的通信方式</strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 嵌入式 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> STM32 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux&amp;umask</title>
+      <link href="/2022/03/09/Linux-umask/"/>
+      <url>/2022/03/09/Linux-umask/</url>
+      
+        <content type="html"><![CDATA[<p> <code>Linux</code>是通过<strong>使用</strong><code>umask</code><strong>默认权限</strong>来<strong>给所有新建的文件</strong>和<strong>目录赋予初始权限的</strong></p><h1 id="查看umask"><a href="#查看umask" class="headerlink" title="查看umask"></a>查看umask</h1><p>通过<code>umask</code>命令即可,即可查看<code>umask</code>默认权限<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">➜  temporary_ws <span class="built_in">umask</span> <span class="comment"># 普通用户默认是 0002</span></span><br><span class="line">002</span><br><span class="line">➜  temporary_ws su <span class="comment"># root用户默认是0022</span></span><br><span class="line">Password:</span><br><span class="line">root@tangshp-desktop:/home/tangshp/Code_ws/temporary_ws<span class="comment"># umask</span></span><br><span class="line">0022</span><br></pre></td></tr></table></figure></p><ul><li><code>umask</code><strong>默认权限</strong>确实由<code>4</code>个<strong>八进制数</strong>组成,但第<code>1</code>个<strong>数代表的是文件所具有的特殊权限</strong>(<code>SetUID、SetGID、Sticky BIT</code>)</li><li><code>后 3 位数字</code>分别对应<strong>拥有者</strong>、<strong>群组</strong>、<strong>其它组</strong></li></ul><h2 id="修改umask"><a href="#修改umask" class="headerlink" title="修改umask"></a>修改umask</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">➜  temporary_ws <span class="built_in">umask</span> 077</span><br><span class="line">➜  temporary_ws <span class="built_in">umask</span></span><br><span class="line">077</span><br></pre></td></tr></table></figure><h1 id="初始权限计算"><a href="#初始权限计算" class="headerlink" title="初始权限计算"></a>初始权限计算</h1><center><font face="黑体" color="black" size="3">文件(或目录)的初始权限 = 文件(或目录)的最大默认权限 - umask权限</font></center><p>文件的<strong>最大默认权限</strong>是<code>666</code>,<strong>换算成字母</strong>就是<code>-rw-rw-rw-</code>,使用<strong>文件的任何用户</strong>都<strong>没有执行</strong>(<code>x</code>)<strong>权限</strong></p><blockquote><p><strong>原因很简单,执行权限是文件的最高权限,赋予时绝对要慎重,因此绝不能在新建文件的时候就默认赋予,只能通过用户手工赋予</strong></p></blockquote><h2 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h2><h3 id="普通用户"><a href="#普通用户" class="headerlink" title="普通用户"></a>普通用户</h3><ul><li><p>普通用户创建文件<br><code>-rw-rw-rw-</code> - 文件的<strong>最大默认权限</strong><br><code>-00-00-0w-</code> - <code>umask</code>的<strong>当前值</strong><br><code>-rw-rw-r0-</code> - <code>umask_002.txt</code>的权限</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">➜  temporary_ws <span class="built_in">umask</span> 002</span><br><span class="line">➜  temporary_ws</span><br><span class="line">➜  temporary_ws</span><br><span class="line">➜  temporary_ws <span class="built_in">echo</span> <span class="string">&quot;umask is 002&quot;</span> &gt; umask_002.txt</span><br><span class="line">➜  temporary_ws ls -l</span><br><span class="line">-rw-rw-r-- 1 tangshp tangshp 13 3月   9 21:14 umask_002.txt</span><br></pre></td></tr></table></figure></li><li><p>减法<br><code>-rw0-rw0-rw0-</code> - 文件的<strong>最大默认权限</strong><br><code>-000-0wx-0wx-</code> - <code>umask</code>的<strong>当前值</strong><br><code>-rw0-r00-r00-</code> - <code>umask_002.txt</code>的权限</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">➜  temporary_ws <span class="built_in">umask</span> 033</span><br><span class="line">➜  temporary_ws <span class="built_in">umask</span></span><br><span class="line">033</span><br><span class="line">➜  temporary_ws <span class="built_in">echo</span> <span class="string">&quot;umask is 033&quot;</span> &gt; umask_033.txt</span><br><span class="line">➜  temporary_ws ls -l *033*</span><br><span class="line">-rw-r--r-- 1 tangshp tangshp 13 3月   9 21:38 umask_033.txt</span><br></pre></td></tr></table></figure></li></ul><p>🔓 <strong>掩码计算的逻辑</strong><br>如果掩码为<code>033</code>,<br><code>0000 0011 0011</code>-<code>umask</code>对应的<strong>二进制</strong><br><code>1111 1100 1100</code>-<code>umask</code>对应的<strong>二进制反码</strong><br><code>0110 0110 0110</code>-文件的<strong>最大默认权限</strong><br><code>0110 0100 0100</code>-<code>umask</code>对应的<strong>二进制反码</strong> 与 文件的<strong>最大默认权限</strong>进行<strong>位与运算</strong>, 即为<code>644-rw-r-r-</code></p><blockquote><p><code>umask</code>取反后,与文件的<strong>最大默认权限</strong>进行<strong>位与运算</strong></p></blockquote><ul><li>修改<code>umask</code>后,<strong>创建文件</strong><br><code>-rw0-rw0-rw0-</code> - 文件的<strong>最大默认权限</strong><br><code>-000-rwx-rwx-</code> - <code>umask</code>的<strong>当前值</strong><br><code>-rw0-000-000-</code> - <code>umask_077.txt</code>的权限<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">➜  temporary_ws <span class="built_in">umask</span> 077</span><br><span class="line">➜  temporary_ws <span class="built_in">umask</span></span><br><span class="line">077</span><br><span class="line">➜  temporary_ws <span class="built_in">echo</span> <span class="string">&quot;umask is 077&quot;</span> &gt; umask_077.txt</span><br><span class="line">➜  temporary_ws ls -l</span><br><span class="line">-rw------- 1 tangshp tangshp 13 3月   9 21:19 umask_077.txt</span><br></pre></td></tr></table></figure></li></ul><h3 id="root用户"><a href="#root用户" class="headerlink" title="root用户"></a>root用户</h3><p><code>-rw0-rw0-rw0-</code> - 文件的<strong>最大默认权限</strong><br><code>-000-0w0-0w0-</code> - <code>umask</code>的<strong>当前值-默认为022</strong><br><code>-rw0-r00-r00-</code> - <code>root_umask_022.txt</code>的权限<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root@tangshp-desktop:/home/tangshp/Code_ws/temporary_ws<span class="comment"># echo &quot;I&#x27;m root, umask is 022&quot; &gt; root_umask_022.txt</span></span><br><span class="line">root@tangshp-desktop:/home/tangshp/Code_ws/temporary_ws<span class="comment"># ls -l</span></span><br><span class="line">total 12</span><br><span class="line">-rw-r--r-- 1 root    root    23 3月   9 21:29 root_umask_022.txt</span><br></pre></td></tr></table></figure></p><h2 id="创建文件夹"><a href="#创建文件夹" class="headerlink" title="创建文件夹"></a>创建文件夹</h2><h3 id="创建文件-1"><a href="#创建文件-1" class="headerlink" title="创建文件"></a>创建文件</h3><p><code>-rwx-rwx-rwx-</code> - 文件夹的<strong>最大默认权限</strong><br><code>-000-000-0w0-</code> - <code>umask</code>的<strong>当前值-默认为002</strong><br><code>-rwx-rwx-r0x-</code> - <code>root_umask_022.txt</code>的权限<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">➜  temporary_ws <span class="built_in">umask</span></span><br><span class="line">002</span><br><span class="line">➜  temporary_ws mkdir current_umask_002</span><br><span class="line">➜  temporary_ws ls -l</span><br><span class="line">drwxrwxr-x 2 tangshp tangshp 4096 3月   9 21:34 current_umask_002</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux的基本使用 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux,权限 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>STM32-F103ZET6-08-NVIC中断</title>
       <link href="/2022/03/07/Embedded-System-00/STM32-F103ZET6-08-NVIC%E4%B8%AD%E6%96%AD/"/>
       <url>/2022/03/07/Embedded-System-00/STM32-F103ZET6-08-NVIC%E4%B8%AD%E6%96%AD/</url>
