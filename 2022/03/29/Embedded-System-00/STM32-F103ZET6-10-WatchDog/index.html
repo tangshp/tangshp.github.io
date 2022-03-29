@@ -1,0 +1,377 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>STM32-F103ZET6-10-WatchDog | 唐成</title><meta name="author" content="唐成"><meta name="copyright" content="唐成"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="STM32F103的看门狗">
+<meta property="og:type" content="article">
+<meta property="og:title" content="STM32-F103ZET6-10-WatchDog">
+<meta property="og:url" content="http://example.com/2022/03/29/Embedded-System-00/STM32-F103ZET6-10-WatchDog/index.html">
+<meta property="og:site_name" content="唐成">
+<meta property="og:description" content="STM32F103的看门狗">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/STM32.png">
+<meta property="article:published_time" content="2022-03-29T14:14:58.000Z">
+<meta property="article:modified_time" content="2022-03-29T15:33:41.237Z">
+<meta property="article:author" content="唐成">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/STM32.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/03/29/Embedded-System-00/STM32-F103ZET6-10-WatchDog/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'STM32-F103ZET6-10-WatchDog',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-03-29 23:33:41'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    document.addEventListener('pjax:complete', detectApple)})(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/book/"><i class="fa-fw book"></i><span> 书籍</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/images/STM32.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">唐成</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/book/"><i class="fa-fw book"></i><span> 书籍</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">STM32-F103ZET6-10-WatchDog</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-03-29T14:14:58.000Z" title="发表于 2022-03-29 22:14:58">2022-03-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-03-29T15:33:41.237Z" title="更新于 2022-03-29 23:33:41">2022-03-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">996</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="STM32-F103ZET6-10-WatchDog"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="看门狗概述"><a href="#看门狗概述" class="headerlink" title="看门狗概述"></a>看门狗概述</h1><h2 id="为什么要看门狗？"><a href="#为什么要看门狗？" class="headerlink" title="为什么要看门狗？"></a>为什么要看门狗？</h2><p>在由单片机构成的微型计算机系统中,由于单片机的工作常常会受到来自<strong>外界电磁场的干扰</strong>,造成程序的<strong>跑飞</strong>,而<strong>陷入死循环</strong>,<strong>程序的正常运行被打断,由单片机控制的系统无法继续工作,会造成整个系统的陷入停滞状态,发生不可预料的后果,所以出于对单片机运行状态进行实时监测的考虑,便产生了一种专门用于监测单片机程序运行状态的模块或者芯片,俗称“看门狗”(watchdog)</strong> 。</p>
+<h2 id="看门狗解决的问题是什么？"><a href="#看门狗解决的问题是什么？" class="headerlink" title="看门狗解决的问题是什么？"></a>看门狗解决的问题是什么？</h2><ul>
+<li>在<strong>启动正常运行的时候，系统不能复位</strong>。</li>
+<li>在<strong>系统跑飞(程序异常执行)的情况,系统复位,程序重新执行。</strong></li>
+</ul>
+<h2 id="STM32的看门狗"><a href="#STM32的看门狗" class="headerlink" title="STM32的看门狗"></a>STM32的看门狗</h2><ul>
+<li><p><code>STM32</code><strong>内置两个看门狗</strong>,提供了<strong>更高的安全性</strong>,<strong>时间的精确性</strong>和<strong>使用的灵活性</strong>。两个<strong>看门狗设备(独立看门狗/窗口看门狗)</strong>可以用来<strong>检测和解决由软件错误引起的故障</strong>。</p>
+<blockquote>
+<p>当<strong>计数器</strong>达到<strong>给定的超时值</strong>时,<strong>触发一个中断(仅适用窗口看门狗)或者产生系统复位</strong>。</p>
+</blockquote>
+</li>
+<li><p><strong>独立看门狗</strong>(<code>IWDG</code>)由专用的<strong>低速时钟</strong>(<code>LSI</code>)驱动,<strong>即使主时钟发生故障它仍有效</strong>。<strong>独立看门狗</strong>适合应用于需要<strong>看门狗作为一个在主程序之外能够完全独立工作</strong>,并且<strong>对时间精度要求低的场合</strong>。</p>
+</li>
+<li><strong>窗口看门狗</strong>由从<code>APB1</code><strong>时钟分频后得到时钟驱动</strong>。通过可配置的<strong>时间窗口</strong>来<strong>检测应用程序非正常的过迟或过早操作</strong>。<strong>窗口看门狗</strong>最适合那些<strong>要求看门狗在精确计时窗口起作用的程序</strong>。</li>
+</ul>
+<h1 id="独立看门狗"><a href="#独立看门狗" class="headerlink" title="独立看门狗"></a>独立看门狗</h1><h2 id="独立看门狗原理"><a href="#独立看门狗原理" class="headerlink" title="独立看门狗原理"></a>独立看门狗原理</h2><ul>
+<li>在<strong>键值寄存器</strong>(<code>IWDG_KR</code>)中写入<code>0xCCCC</code>,开始<strong>启用独立看门狗</strong>。</li>
+<li>此时<strong>计数器</strong>开始<strong>从其复位值</strong><code>0xFFF</code><strong>递减</strong>,当<strong>计数器值</strong>计数到<strong>尾值</strong><code>0x000</code>时<strong>会产生一个复位信号</strong>(<code>IWDG_RESET</code>)。</li>
+<li>无论何时,只要在<strong>键值寄存器</strong><code>IWDG_KR</code>中<strong>写入</strong><code>0xAAAA</code>(通常说的<strong>喂狗</strong>),自动<strong>重装载寄存器</strong><code>IWDG_RLR</code>的值就会<strong>重新加载</strong>到<strong>计数器</strong>,从而<strong>避免看门狗复位</strong>。</li>
+<li>如果<strong>程序异常</strong>,就<strong>无法正常喂狗</strong>,从而<strong>系统复位</strong>。</li>
+</ul>
+<p>&#x1F349;参考<code>STM32中文参考手册_V10.pdf - 17 独立看门狗(IWDG) 图157-独立看门狗框图</code><br><img src="/images/独立看门狗.png" alt="独立看门狗原理"></p>
+<h2 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h2><ul>
+<li><strong>键值寄存器</strong><code>IWDG_KR</code>:<code>0~15</code>位有效 - <strong>开启0XCCCC/喂狗0XAAAA</strong></li>
+<li><strong>预分频寄存器</strong><code>IWDG_PR</code>：<code>0~2</code>位有效。<strong>具有写保护功能,要操作先取消写保护</strong> - <strong>时钟频率配置</strong></li>
+<li><strong>重装载寄存器</strong><code>IWDG_RLR</code>：<code>0~11</code>位有效。<strong>具有写保护功能，要操作先取消写保护</strong> - <strong>转载值配置</strong></li>
+<li><strong>状态寄存器</strong><code>IWDG_SR</code>：<code>0~1</code>位有效</li>
+</ul>
+<h3 id="键值寄存器"><a href="#键值寄存器" class="headerlink" title="键值寄存器"></a>键值寄存器</h3><p><strong>键值寄存器</strong><code>IWDG_KR</code>:<code>0~15</code>位有效 - <strong>开启0XCCCC/喂狗0XAAAA</strong></p>
+<blockquote>
+<p>写入<code>0x5555</code>表示<strong>允许访问</strong><code>IWDG_PR</code>和<code>IWDG_RLR</code>寄存器</p>
+</blockquote>
+<h3 id="溢出时间计算"><a href="#溢出时间计算" class="headerlink" title="溢出时间计算"></a>溢出时间计算</h3><p><img src="/images/独立看门狗_时钟频率.png" alt="独立看门狗_时钟频率"><br>时钟频率<code>LSI=40K</code>,则</p>
+<script type="math/tex; mode=display">
+Tout=\frac{4\times 2^{PR[0:2]}}{Fre_{LSI}}\times (IWDG\_RLR+1)</script><p>譬如:当<code>PR[0:2]=010</code>,则<strong>最大溢出时长</strong></p>
+<script type="math/tex; mode=display">
+Tout=\frac{4\times 2^2}{40\times10^3}\times (FFF_{hex}+1)=1638.4 ms</script><p><strong>最小时间长度</strong>为:</p>
+<script type="math/tex; mode=display">
+Tout=\frac{4\times 2^2}{40\times10^3} = 0.4 ms</script><h2 id="库函数"><a href="#库函数" class="headerlink" title="库函数"></a>库函数</h2><h3 id="标准库"><a href="#标准库" class="headerlink" title="标准库"></a>标准库</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">IWDG_WriteAccessCmd</span><span class="params">(<span class="keyword">uint16_t</span> IWDG_WriteAccess)</span></span>;<span class="comment">//取消写保护：0x5555使能</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">IWDG_SetPrescaler</span><span class="params">(<span class="keyword">uint8_t</span> IWDG_Prescaler)</span></span>;<span class="comment">//设置预分频系数：写PR</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">IWDG_SetReload</span><span class="params">(<span class="keyword">uint16_t</span> Reload)</span></span>;<span class="comment">//设置重装载值：写RLR</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">IWDG_ReloadCounter</span><span class="params">(<span class="keyword">void</span>)</span></span>;<span class="comment">//喂狗：写0xAAAA到KR</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">IWDG_Enable</span><span class="params">(<span class="keyword">void</span>)</span></span>;<span class="comment">//使能看门狗：写0xCCCC到KR</span></span><br><span class="line"><span class="function">FlagStatus <span class="title">IWDG_GetFlagStatus</span><span class="params">(<span class="keyword">uint16_t</span> IWDG_FLAG)</span></span>;<span class="comment">//状态：重装载/预分频 更新</span></span><br></pre></td></tr></table></figure>
+<h3 id="HAL库"><a href="#HAL库" class="headerlink" title="HAL库"></a>HAL库</h3><h2 id="独立看门狗配置流程"><a href="#独立看门狗配置流程" class="headerlink" title="独立看门狗配置流程"></a>独立看门狗配置流程</h2><ul>
+<li>1、<strong>取消寄存器写保护</strong><code>IWDG_WriteAccessCmd();</code></li>
+<li>2、设置<strong>独立看门狗的预分频系数</strong>,确定时钟 <code>IWDG_SetPrescaler();</code></li>
+<li>3、设置<strong>看门狗重装载值</strong>,确定溢出时间<code>IWDG_SetReload();</code></li>
+<li>4、<strong>使能看门狗</strong><code>IWDG_Enable();</code></li>
+<li>5、应用程序<strong>喂狗</strong><code>IWDG_ReloadCounter();</code></li>
+</ul>
+<h2 id="STM32CubeMX配置IDWG"><a href="#STM32CubeMX配置IDWG" class="headerlink" title="STM32CubeMX配置IDWG"></a>STM32CubeMX配置IDWG</h2></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">唐成</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/03/29/Embedded-System-00/STM32-F103ZET6-10-WatchDog/">http://example.com/2022/03/29/Embedded-System-00/STM32-F103ZET6-10-WatchDog/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">唐成</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/images/STM32.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/03/09/Embedded-System-00/STM32-F103ZET6-09-USART/"><img class="next-cover" src="/images/STM32.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">STM32-F103ZET6-09-USART</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="lv-container" data-id="city"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">唐成</div><div class="author-info__description">一个记录学习的地方</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/tangshp"><i class="fab fa-github"></i><span>Don't Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/tangshp" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:791276448@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">暂时没有广告</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9C%8B%E9%97%A8%E7%8B%97%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">看门狗概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%9C%8B%E9%97%A8%E7%8B%97%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">为什么要看门狗？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9C%8B%E9%97%A8%E7%8B%97%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.2.</span> <span class="toc-text">看门狗解决的问题是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#STM32%E7%9A%84%E7%9C%8B%E9%97%A8%E7%8B%97"><span class="toc-number">1.3.</span> <span class="toc-text">STM32的看门狗</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8B%AC%E7%AB%8B%E7%9C%8B%E9%97%A8%E7%8B%97"><span class="toc-number">2.</span> <span class="toc-text">独立看门狗</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8B%AC%E7%AB%8B%E7%9C%8B%E9%97%A8%E7%8B%97%E5%8E%9F%E7%90%86"><span class="toc-number">2.1.</span> <span class="toc-text">独立看门狗原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-number">2.2.</span> <span class="toc-text">寄存器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%AE%E5%80%BC%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-number">2.2.1.</span> <span class="toc-text">键值寄存器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BA%A2%E5%87%BA%E6%97%B6%E9%97%B4%E8%AE%A1%E7%AE%97"><span class="toc-number">2.2.2.</span> <span class="toc-text">溢出时间计算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%93%E5%87%BD%E6%95%B0"><span class="toc-number">2.3.</span> <span class="toc-text">库函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E5%87%86%E5%BA%93"><span class="toc-number">2.3.1.</span> <span class="toc-text">标准库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HAL%E5%BA%93"><span class="toc-number">2.3.2.</span> <span class="toc-text">HAL库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8B%AC%E7%AB%8B%E7%9C%8B%E9%97%A8%E7%8B%97%E9%85%8D%E7%BD%AE%E6%B5%81%E7%A8%8B"><span class="toc-number">2.4.</span> <span class="toc-text">独立看门狗配置流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#STM32CubeMX%E9%85%8D%E7%BD%AEIDWG"><span class="toc-number">2.5.</span> <span class="toc-text">STM32CubeMX配置IDWG</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/03/29/Embedded-System-00/STM32-F103ZET6-10-WatchDog/" title="STM32-F103ZET6-10-WatchDog"><img src="/images/STM32.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="STM32-F103ZET6-10-WatchDog"/></a><div class="content"><a class="title" href="/2022/03/29/Embedded-System-00/STM32-F103ZET6-10-WatchDog/" title="STM32-F103ZET6-10-WatchDog">STM32-F103ZET6-10-WatchDog</a><time datetime="2022-03-29T14:14:58.000Z" title="发表于 2022-03-29 22:14:58">2022-03-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/09/Embedded-System-00/STM32-F103ZET6-09-USART/" title="STM32-F103ZET6-09-USART"><img src="/images/STM32.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="STM32-F103ZET6-09-USART"/></a><div class="content"><a class="title" href="/2022/03/09/Embedded-System-00/STM32-F103ZET6-09-USART/" title="STM32-F103ZET6-09-USART">STM32-F103ZET6-09-USART</a><time datetime="2022-03-09T14:37:50.000Z" title="发表于 2022-03-09 22:37:50">2022-03-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/09/Linux-umask/" title="Linux&amp;umask"><img src="/images/%E6%9D%83%E9%99%90.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux&amp;umask"/></a><div class="content"><a class="title" href="/2022/03/09/Linux-umask/" title="Linux&amp;umask">Linux&amp;umask</a><time datetime="2022-03-09T12:26:03.000Z" title="发表于 2022-03-09 20:26:03">2022-03-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/07/Embedded-System-00/STM32-F103ZET6-08-NVIC%E4%B8%AD%E6%96%AD/" title="STM32-F103ZET6-08-NVIC中断"><img src="/images/STM32.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="STM32-F103ZET6-08-NVIC中断"/></a><div class="content"><a class="title" href="/2022/03/07/Embedded-System-00/STM32-F103ZET6-08-NVIC%E4%B8%AD%E6%96%AD/" title="STM32-F103ZET6-08-NVIC中断">STM32-F103ZET6-08-NVIC中断</a><time datetime="2022-03-07T14:58:26.000Z" title="发表于 2022-03-07 22:58:26">2022-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/06/Embedded-System-00/STM32-F103ZET6-07-%E7%AB%AF%E5%8F%A3%E5%A4%8D%E7%94%A8-%E9%87%8D%E6%98%A0%E5%B0%84/" title="STM32-F103ZET6-07-端口复用&amp;重映射"><img src="/images/STM32.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="STM32-F103ZET6-07-端口复用&amp;重映射"/></a><div class="content"><a class="title" href="/2022/03/06/Embedded-System-00/STM32-F103ZET6-07-%E7%AB%AF%E5%8F%A3%E5%A4%8D%E7%94%A8-%E9%87%8D%E6%98%A0%E5%B0%84/" title="STM32-F103ZET6-07-端口复用&amp;重映射">STM32-F103ZET6-07-端口复用&amp;重映射</a><time datetime="2022-03-06T14:30:21.000Z" title="发表于 2022-03-06 22:30:21">2022-03-06</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 唐成</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      true && mermaid.init()
+    })
+  }
+}</script><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Livere' === 'Livere' || !false) {
+  if (false) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script></div><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (true) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+  window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
