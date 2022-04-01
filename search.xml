@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>LVGL_00_模拟器搭建</title>
+      <link href="/2022/04/01/LVGL_ws/LVGL-00-%E6%A8%A1%E6%8B%9F%E5%99%A8%E6%90%AD%E5%BB%BA/"/>
+      <url>/2022/04/01/LVGL_ws/LVGL-00-%E6%A8%A1%E6%8B%9F%E5%99%A8%E6%90%AD%E5%BB%BA/</url>
+      
+        <content type="html"><![CDATA[<h1 id="LVGL介绍"><a href="#LVGL介绍" class="headerlink" title="LVGL介绍"></a>LVGL介绍</h1><p>废话不多说</p><h1 id="资料准备"><a href="#资料准备" class="headerlink" title="资料准备"></a>资料准备</h1><p><code>windows</code>中使用<code>vscode</code>搭建<code>LVGL</code><strong>模拟器</strong>基于<a href="https://docs.lvgl.io/master/index.html">官方教程</a>中的<a href="https://github.com/lvgl/lv_port_win_codeblocks">CodeBlocks教程</a></p><ul><li>下载<a href="https://github.com/lvgl/lv_port_win_codeblocks">lv_port_win_codeblocks</a></li><li>单独下载其中的<code>lv_demos</code>,<code>lv_drivers</code>,<code>lvgl</code></li></ul><p><img src="/images/lvgl_git.png" alt="lvgl_git"></p><blockquote><p><strong>所有文件如上图所示</strong>,其中<code>CMakeLists.txt</code>是自己创建的</p></blockquote><h1 id="CMakeLists编写"><a href="#CMakeLists编写" class="headerlink" title="CMakeLists编写"></a>CMakeLists编写</h1><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.18</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">project</span>(lv_sim_code)</span><br><span class="line"></span><br><span class="line"><span class="keyword">ADD_DEFINITIONS</span>(-DLV_CONF_INCLUDE_SIMPLE=<span class="number">1</span> -DWINVER=<span class="number">0</span>x0601)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">include_directories</span>(./)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_subdirectory</span>(lv_demos)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_subdirectory</span>(lvgl)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_subdirectory</span>(lv_drivers)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(main main.c)</span><br><span class="line"></span><br><span class="line"><span class="keyword">target_link_libraries</span>(main lv_examples lvgl lv_drivers)</span><br></pre></td></tr></table></figure><blockquote><p><strong>需要事先</strong>安装<code>Cmake</code>和<code>mingw</code>,<code>vscode</code>中需要安装<code>cmake</code>相关<strong>插件</strong>,<kbd>ctrl</kbd>+<kbd>s</kbd>后会自动生成<code>build</code>文件夹,进入<code>build</code>文件夹执行<code>make</code>即可</p></blockquote><p><img src="/images/lvgl_main.png" alt="lvgl_main"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 嵌入式 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LVGL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>STM32-F103ZET6-10-WatchDog</title>
       <link href="/2022/03/29/Embedded-System-00/STM32-F103ZET6-10-WatchDog/"/>
       <url>/2022/03/29/Embedded-System-00/STM32-F103ZET6-10-WatchDog/</url>
@@ -17,6 +42,12 @@
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> STM32 </tag>
+            
+        </tags>
       
     </entry>
     
