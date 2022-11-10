@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>01-java环境搭建</title>
+      <link href="/2022/11/10/java/01-java%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+      <url>/2022/11/10/java/01-java%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
+      
+        <content type="html"><![CDATA[<h2 id="jdk"><a href="#jdk" class="headerlink" title="jdk"></a>jdk</h2><p><strong>下载</strong> <a href="https://www.oracle.com/java/technologies/downloads/">jdk</a> (<code>Java Development Kit</code>) 是 <code>Java</code> 语言的软件开发工具包, 其中包含了了<code>javac</code>和<code>java</code>命令,<code>jdk-19_windows-x64_bin.msi</code>中包含了<code>jre</code>(‘Java Runtime Environment’)</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">PS D:\STUDY\Code_ws\java_ws\demoInteliJ\src&gt; javac Main.java</span><br><span class="line">PS D:\STUDY\Code_ws\java_ws\demoInteliJ\src&gt; ls</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    目录: D:\STUDY\Code_ws\java_ws\demoInteliJ\src</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">Mode</span>                 LastWriteTime         Length Name</span><br><span class="line">----                 -------------         ------ ----</span><br><span class="line">-a----        <span class="number">2022</span>/<span class="number">11</span>/<span class="number">10</span>     <span class="number">23</span>:<span class="number">09</span>            <span class="number">414</span> Main.class</span><br><span class="line">-a----        <span class="number">2022</span>/<span class="number">11</span>/<span class="number">10</span>     <span class="number">22</span>:<span class="number">25</span>            <span class="number">116</span> Main.java</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">PS D:\STUDY\Code_ws\java_ws\demoInteliJ\src&gt; java Main</span><br><span class="line">Hello world!</span><br></pre></td></tr></table></figure><p>记得添加<code>E:\Java\jdk-19\bin</code>到<code>path</code><br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Users</span>\79127&gt;<span class="title">java</span> --<span class="title">version</span></span></span><br><span class="line"><span class="function"><span class="title">java</span> 19.0.1 2022-10-18</span></span><br><span class="line"><span class="function"><span class="title">Java</span>(<span class="title">TM</span>) <span class="title">SE</span> <span class="title">Runtime</span> <span class="title">Environment</span> (<span class="title">build</span> 19.0.1+10-21)</span></span><br><span class="line"><span class="function"><span class="title">Java</span> <span class="title">HotSpot</span>(<span class="title">TM</span>) 64-<span class="title">Bit</span> <span class="title">Server</span> <span class="title">VM</span> (<span class="title">build</span> 19.0.1+10-21, <span class="title">mixed</span> <span class="title">mode</span>, <span class="title">sharing</span>)</span></span><br></pre></td></tr></table></figure></p><h2 id="IntelliJ-IDEA-Community-Edition-2022-2-3"><a href="#IntelliJ-IDEA-Community-Edition-2022-2-3" class="headerlink" title="IntelliJ IDEA Community Edition 2022.2.3"></a>IntelliJ IDEA Community Edition 2022.2.3</h2><p><strong>下载</strong> <a href="https://www.jetbrains.com.cn/idea/">IntelliJ IDEA Community Edition 2022.2.3</a><strong>社区版</strong></p><p><img src="/images/java/inteliJ.png" alt="设置工作空间"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> JAVA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>02-计算机网络-物理层</title>
+      <link href="/2022/09/04/Computer_network/02-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82/"/>
+      <url>/2022/09/04/Computer_network/02-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82/</url>
+      
+        <content type="html"><![CDATA[<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p><strong>物理层</strong>解决如何在连接各种计算机的<strong>传输媒体</strong>(光纤,电缆,无线等)上<strong>传输数据比特流</strong>，而不是指具体的传输媒体(哪个产家)<br><strong>传输媒体</strong>被称为<strong>物理层的第零层, 与物理层是分开的</strong>;</p><p>物理层的<strong>主要任务</strong>:<strong>确定与传输媒体接口有关的一些标准</strong></p><h2 id="物理层特性"><a href="#物理层特性" class="headerlink" title="物理层特性"></a>物理层特性</h2><ul><li><strong>机械特性</strong>：定义物理连接特性，规定物理连接时所采用的<strong>规格、接口形状、引线数目、引脚数量和排列情况</strong></li><li><strong>电气特性</strong>：规定传输二进制位时，线路上信号的<strong>电压范围、阻抗匹配、传输速率和距离限制</strong>；(比如高电平为<code>+10v~+15v</code>, 低电平为<code>-15v~-10v</code>)</li><li><strong>功能特性</strong>：指明某条线上出现某一电平表示何种意义，接口部件的信号用途(高电平的含义)</li><li><strong>规程特性</strong>：定义各条物理线路的工作<strong>规程和时序</strong>关系</li></ul><h2 id="数据通信基础知识"><a href="#数据通信基础知识" class="headerlink" title="数据通信基础知识"></a>数据通信基础知识</h2><ul><li>典型的数据通信模型<ul><li>计算机(<strong>信源</strong>)中输入信息</li><li>在<strong>发送器(调制解调器)</strong>中将<strong>数字信号</strong>转化为<strong>模拟信号</strong></li><li>公用电话网络是传输系统</li><li>在<strong>接受器(调制解调器)</strong>中将<strong>模拟信号</strong>转化为<strong>数字信号</strong></li><li>在计算机(<strong>信宿</strong>)中输出信息</li></ul></li></ul><p><img src="/images/Compute_network/数据通信模型.png" alt="数据通信模型"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> C++ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Computer_Network </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>11-xxx-like_classes</title>
       <link href="/2022/08/21/CPP/11-C-xxx-like-classes/"/>
       <url>/2022/08/21/CPP/11-C-xxx-like-classes/</url>
