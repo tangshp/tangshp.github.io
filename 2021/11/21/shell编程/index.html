@@ -17,7 +17,7 @@
   localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
   translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
   noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
   copy: {
     success: '复制成功',
     error: '复制错误',
@@ -147,18 +147,25 @@
       }
     }
     detectApple()
-    document.addEventListener('pjax:complete', detectApple)})(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">67</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">17</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/book/"><i class="fa-fw book"></i><span> 书籍</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/images/linux.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">唐成</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/book/"><i class="fa-fw book"></i><span> 书籍</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">shell编程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-11-21T11:54:38.000Z" title="发表于 2021-11-21 19:54:38">2021-11-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-12-12T15:23:12.353Z" title="更新于 2021-12-12 23:23:12">2021-12-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Linux%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">Linux的基本使用</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">5.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>25分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="shell编程"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="debug"><a href="#debug" class="headerlink" title="debug"></a>debug</h1><ul>
+    document.addEventListener('pjax:complete', detectApple)})(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">67</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">17</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/book/"><i class="fa-fw book"></i><span> 书籍</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/images/linux.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">唐成</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/book/"><i class="fa-fw book"></i><span> 书籍</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">shell编程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-11-21T11:54:38.000Z" title="发表于 2021-11-21 19:54:38">2021-11-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-12-12T15:23:12.353Z" title="更新于 2021-12-12 23:23:12">2021-12-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Linux%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">Linux的基本使用</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">5.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>25分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="shell编程"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="debug"><a href="#debug" class="headerlink" title="debug"></a>debug</h1><ul>
 <li>以<code>debug</code>模式运行脚本</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 0-debug.sh</span></span><br><span class="line">echo &quot;debug&quot;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sh -x ./0-debug.sh</span><br><span class="line">+ <span class="built_in">echo</span> debug</span><br><span class="line">debug</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 0-debug.sh</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"debug"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sh</span> -x ./0-debug.sh
++ <span class="token builtin class-name">echo</span> debug
+debug<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>1.带<code>+</code>表示执行过程<br>2.没有<code>+</code>表示标准输出</p>
 </blockquote>
 <ul>
 <li>在脚本中指定一部分脚本开启<code>debug</code></li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;debug&quot;</span><br><span class="line">set -x </span><br><span class="line">ls</span><br><span class="line">set +x</span><br><span class="line">echo &quot;end&quot;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token builtin class-name">echo</span> <span class="token string">"debug"</span>
+<span class="token builtin class-name">set</span> -x 
+<span class="token function">ls</span>
+<span class="token builtin class-name">set</span> +x
+<span class="token builtin class-name">echo</span> <span class="token string">"end"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>1.<code>set -x</code>开启<code>debug</code><br>2.<code>set +x</code>关闭<code>debug</code></p>
 </blockquote>
@@ -189,62 +196,86 @@
 </tbody>
 </table>
 </div>
-<h2 id="基础正则"><a href="#基础正则" class="headerlink" title="基础正则"></a>基础正则</h2><p><strong>素材</strong><br><code>grep_help.txt</code><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">grep  searches for PATTERNS in each FILE.  PATTERNS is one or more patterns </span><br><span class="line">separated by newline characters, and grep prints each line that matches a pattern.</span><br><span class="line">Typically PATTERNS should be quoted when grep is used in a shell command.</span><br><span class="line"></span><br><span class="line">A FILE of “-” stands for standard input.  If no FILE is given, recursive searches </span><br><span class="line">examine the working  directory,  and  nonrecursive  searches  read  standard</span><br><span class="line">input.</span><br><span class="line"></span><br><span class="line">In  addition, the variant programs egrep, fgrep and rgrep are the same as grep -E, </span><br><span class="line">grep -F, and grep -r, respectively.  These variants are deprecated, but are</span><br><span class="line">provided for backward compatibility.</span><br></pre></td></tr></table></figure></p>
+<h2 id="基础正则"><a href="#基础正则" class="headerlink" title="基础正则"></a>基础正则</h2><p><strong>素材</strong><br><code>grep_help.txt</code><br><pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">grep  searches for PATTERNS in each FILE.  PATTERNS is one or more patterns 
+separated by newline characters, and grep prints each line that matches a pattern.
+Typically PATTERNS should be quoted when grep is used in a shell command.
+
+A FILE of “-” stands for standard input.  If no FILE is given, recursive searches 
+examine the working  directory,  and  nonrecursive  searches  read  standard
+input.
+
+In  addition, the variant programs egrep, fgrep and rgrep are the same as grep -E, 
+grep -F, and grep -r, respectively.  These variants are deprecated, but are
+provided for backward compatibility.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
 <ul>
-<li><code>^xxx</code>-以<code>xxx</code>开头的行<br>搜索以<code>In</code>开头的行<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts grep <span class="string">&quot;^In&quot;</span> ./grep_help.txt </span><br></pre></td></tr></table></figure>
+<li><code>^xxx</code>-以<code>xxx</code>开头的行<br>搜索以<code>In</code>开头的行<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">grep</span> <span class="token string">"^In"</span> ./grep_help.txt <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <img src="/images/shell/^xxx.png" alt="结果"></li>
 </ul>
 <ul>
 <li><p><code>xxx$</code>-以<code>xxx</code>结尾的行<br>搜索以<code>.</code>结尾的行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts grep <span class="string">&#x27;\.$&#x27;</span> ./grep_help.txt</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">grep</span> <span class="token string">'\.$'</span> ./grep_help.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><img src="/images/shell/xxx$.png" alt="结果"></p>
 </li>
 <li><p><code>^$</code>-<strong>空行</strong><br><strong>空行</strong>表示没有任何字符(空格也没有)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts grep -n <span class="string">&#x27;^$&#x27;</span> ./grep_help.txt</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">grep</span> -n <span class="token string">'^$'</span> ./grep_help.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><strong>用法</strong>:排除空行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">grep -v <span class="string">&#x27;^$&#x27;</span> ./grep_help.txt</span><br><span class="line">grep  searches <span class="keyword">for</span> PATTERNS <span class="keyword">in</span> each FILE.  PATTERNS is one or more patterns </span><br><span class="line">separated by newline characters, and grep prints each line that matches a pattern.</span><br><span class="line">Typically PATTERNS should be quoted when grep is used <span class="keyword">in</span> a shell <span class="built_in">command</span>.</span><br><span class="line">A FILE of “-” stands <span class="keyword">for</span> standard input.  If no FILE is given, recursive searches </span><br><span class="line">examine the working  directory,  and  nonrecursive  searches  <span class="built_in">read</span>  standard</span><br><span class="line">input.</span><br><span class="line">In  addition, the variant programs egrep, fgrep and rgrep are the same as grep -E, </span><br><span class="line">grep -F, and grep -r, respectively.  These variants are deprecated, but are</span><br><span class="line">provided <span class="keyword">for</span> backward compatibility.</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">grep</span> -v <span class="token string">'^$'</span> ./grep_help.txt
+<span class="token function">grep</span>  searches <span class="token keyword">for</span> <span class="token for-or-select variable">PATTERNS</span> <span class="token keyword">in</span> each FILE.  PATTERNS is one or <span class="token function">more</span> patterns 
+separated by newline characters, and <span class="token function">grep</span> prints each line that matches a pattern.
+Typically PATTERNS should be quoted when <span class="token function">grep</span> is used <span class="token keyword">in</span> a shell command.
+A FILE of “-” stands <span class="token keyword">for</span> standard input.  If no FILE is given, recursive searches 
+examine the working  directory,  and  nonrecursive  searches  <span class="token builtin class-name">read</span>  standard
+input.
+In  addition, the variant programs egrep, <span class="token function">fgrep</span> and rgrep are the same as <span class="token function">grep</span> -E, 
+<span class="token function">grep</span> -F, and <span class="token function">grep</span> -r, respectively.  These variants are deprecated, but are
+provided <span class="token keyword">for</span> backward compatibility.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p><code>.</code>-<strong>任意一个字符</strong><br><strong>但是会忽略空行</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts grep <span class="string">&#x27;. &#x27;</span> ./grep_help.txt</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">grep</span> <span class="token string">'. '</span> ./grep_help.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><img src="/images/shell/any.png" alt="结果"></p>
 </li>
 <li><p><code>x*</code>-<code>0</code>次及<code>0</code>次以上出现<code>x</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts grep <span class="string">&#x27;T*&#x27;</span> ./grep_help.txt</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">grep</span> <span class="token string">'T*'</span> ./grep_help.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><img src="/images/shell/xany.png" alt="结果"></p>
 </li>
 <li><p><code>.*</code>-<strong>所有</strong><br><strong>运用</strong>:匹配以指定字符结束的行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts grep <span class="string">&#x27;^.*P&#x27;</span> ./grep_help.txt</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">grep</span> <span class="token string">'^.*P'</span> ./grep_help.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><img src="/images/shell/compose.png" alt="结果"></p>
 <blockquote>
 <p>到最后一个指定字符, 则体现了正则表达式的<strong>贪婪行</strong></p>
 </blockquote>
 </li>
 <li><p><code>[abc]</code>-一次匹配一个字符(<code>a,b,c</code>中任意一个)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts grep <span class="string">&#x27;[a-z]&#x27;</span> ./grep_help.txt</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">grep</span> <span class="token string">'[a-z]'</span> ./grep_help.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><img src="/images/shell/az.png" alt="结果"></p>
 <ul>
 <li><p>匹配大小写与数字</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts grep <span class="string">&#x27;[a-zA-Z0-9]&#x27;</span> ./grep_help.txt</span><br><span class="line">➜  Scripts grep <span class="string">&#x27;[a-Z0-9]&#x27;</span> ./grep_help.txt </span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">grep</span> <span class="token string">'[a-zA-Z0-9]'</span> ./grep_help.txt
+➜  Scripts <span class="token function">grep</span> <span class="token string">'[a-Z0-9]'</span> ./grep_help.txt <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p><img src="/images/shell/aZ09.png" alt="结果"></p>
 </li>
 <li><p><code>[]</code>中添加其它的符号<br>除了匹配<code>a-Z 0-9</code>以外,还要匹配<code>,</code>和<code>.</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts grep <span class="string">&#x27;[a-Z,.0-9]&#x27;</span> ./grep_help.txt</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">grep</span> <span class="token string">'[a-Z,.0-9]'</span> ./grep_help.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><img src="/images/shell/fromaZ.png" alt="结果"></p>
 </li>
 </ul>
 </li>
 <li><p><code>[^xxx]</code>-匹配除<code>xxx</code>以外的内容</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts grep <span class="string">&#x27;[^a-z]&#x27;</span> ./grep_help.txt</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">grep</span> <span class="token string">'[^a-z]'</span> ./grep_help.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><img src="/images/shell/other.png" alt="结果"></p>
 </li>
 </ul>
 <h2 id="扩展正则"><a href="#扩展正则" class="headerlink" title="扩展正则"></a>扩展正则</h2><ul>
 <li><p><code>+</code>-匹配<code>1</code>或则<code>1</code>个以上的字符,并输出匹配到的行<br>要使用扩展正则命令,需要以以下三种方式书写</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">&#x27;m\+&#x27;</span> ./grep_help.txt</span><br><span class="line">grep -E <span class="string">&#x27;m+&#x27;</span> ./grep_help.txt</span><br><span class="line">egrep <span class="string">&#x27;m+&#x27;</span> ./grep_help.txt</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">grep</span> <span class="token string">'m\+'</span> ./grep_help.txt
+<span class="token function">grep</span> -E <span class="token string">'m+'</span> ./grep_help.txt
+<span class="token function">egrep</span> <span class="token string">'m+'</span> ./grep_help.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p><img src="/images/shell/+ERE.png" alt="结果"></p>
 <ul>
-<li>匹配文件中连续的数字<br>素材<code>ascii.txt</code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">000   0     00    NUL &#x27;\0&#x27; (null character)   100   64    40    @</span><br><span class="line">001   1     01    SOH (start of heading)      101   65    41    A</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">egrep -o <span class="string">&#x27;[0-9]+&#x27;</span> ./ascii.txt</span><br><span class="line">egrep <span class="string">&#x27;[0-9]+&#x27;</span> ./ascii.txt</span><br></pre></td></tr></table></figure>
+<li>匹配文件中连续的数字<br>素材<code>ascii.txt</code><pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">000   0     00    NUL '\0' (null character)   100   64    40    @
+001   1     01    SOH (start of heading)      101   65    41    A<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">egrep</span> -o <span class="token string">'[0-9]+'</span> ./ascii.txt
+<span class="token function">egrep</span> <span class="token string">'[0-9]+'</span> ./ascii.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <img src="/images/shell/+RER_0.png" alt="结果"><blockquote>
 <p><code>-o</code>表示输出过程,可获得匹配到的对象,而不是整行</p>
 </blockquote>
@@ -254,7 +285,7 @@
 <li><p><code>|</code>-或者</p>
 </li>
 </ul>
-<p>匹配单词或则数值<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep <span class="string">&#x27;[0-9]+|[a-Z]+&#x27;</span> ./ascii.txt</span><br></pre></td></tr></table></figure><br><img src="/images/shell/or_ERE.png" alt="结果"></p>
+<p>匹配单词或则数值<br><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">egrep</span> <span class="token string">'[0-9]+|[a-Z]+'</span> ./ascii.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><br><img src="/images/shell/or_ERE.png" alt="结果"></p>
 <div class="table-container">
 <table>
 <thead>
@@ -284,8 +315,9 @@
 <p>1.被括号括起来的内容是一个整体<br>2.反向引用-<code>sed</code></p>
 </blockquote>
 <ul>
-<li>匹配<code>tooth或者teeth</code><br>素材<code>bracket.txt</code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if a law or an organization has teeth, it has the power to force people to obey it.</span><br><span class="line">We fought tooth and nail to get these plans accepted.</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep <span class="string">&#x27;t(oo|ee)th&#x27;</span> ./bracket.txt</span><br></pre></td></tr></table></figure>
+<li>匹配<code>tooth或者teeth</code><br>素材<code>bracket.txt</code><pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">if a law or an organization has teeth, it has the power to force people to obey it.
+We fought tooth and nail to get these plans accepted.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">egrep</span> <span class="token string">'t(oo|ee)th'</span> ./bracket.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <img src="/images/shell/bracket_0.png" alt="结果"></li>
 </ul>
 </li>
@@ -333,15 +365,23 @@
 </blockquote>
 <ul>
 <li><p>匹配单复数<br><code>question_mark.txt</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Peel the oranges and divide them into segments.</span><br><span class="line">a bright shade of orange</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">Peel the oranges and divide them into segments.
+a bright shade of orange<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p><img src="/images/shell/question_mark.png" alt="结果"></p>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="粗略地匹配身份证"><a href="#粗略地匹配身份证" class="headerlink" title="粗略地匹配身份证"></a>粗略地匹配身份证</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">赵 211324198705244720</span><br><span class="line">钱 500224197105168312</span><br><span class="line">孙 1233211234569sunSS</span><br><span class="line">李 liliangcheng</span><br><span class="line">周 zhou21132693130593</span><br><span class="line">吴 14052219961008852X</span><br><span class="line">郑 431009199606233566</span><br><span class="line">王 47001320060315X365</span><br></pre></td></tr></table></figure>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="粗略地匹配身份证"><a href="#粗略地匹配身份证" class="headerlink" title="粗略地匹配身份证"></a>粗略地匹配身份证</h3><pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">赵 211324198705244720
+钱 500224197105168312
+孙 1233211234569sunSS
+李 liliangcheng
+周 zhou21132693130593
+吴 14052219961008852X
+郑 431009199606233566
+王 47001320060315X365<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="/images/shell/id.png" alt="结果"></p>
-<h3 id="排除空行和包含-的行"><a href="#排除空行和包含-的行" class="headerlink" title="排除空行和包含^的行"></a>排除空行和包含<code>^</code>的行</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">egrep -v <span class="string">&#x27;^$|#&#x27;</span></span><br></pre></td></tr></table></figure>
+<h3 id="排除空行和包含-的行"><a href="#排除空行和包含-的行" class="headerlink" title="排除空行和包含^的行"></a>排除空行和包含<code>^</code>的行</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">egrep</span> -v <span class="token string">'^$|#'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h1 id="三剑客"><a href="#三剑客" class="headerlink" title="三剑客"></a>三剑客</h1><div class="table-container">
 <table>
 <thead>
@@ -421,19 +461,30 @@
 </div>
 <ul>
 <li><p><code>-C</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts seq 10 | grep -C1 5</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">seq</span> <span class="token number">10</span> <span class="token operator">|</span> <span class="token function">grep</span> -C1 <span class="token number">5</span>
+<span class="token number">4</span>
+<span class="token number">5</span>
+<span class="token number">6</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p><code>-c</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts ps -ef | grep sshd | wc -l</span><br><span class="line">8</span><br><span class="line">➜  Scripts ps -ef | grep -c sshd     </span><br><span class="line">8</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">ps</span> -ef <span class="token operator">|</span> <span class="token function">grep</span> sshd <span class="token operator">|</span> <span class="token function">wc</span> -l
+<span class="token number">8</span>
+➜  Scripts <span class="token function">ps</span> -ef <span class="token operator">|</span> <span class="token function">grep</span> -c sshd     
+<span class="token number">8</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p><code>-v</code></p>
 <blockquote>
 <p>过滤<code>grep</code>本身这个进程</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts ps -ef | grep hexo         </span><br><span class="line">tangshp     6109    5504  1 20:42 pts/0    00:01:56 hexo</span><br><span class="line">tangshp     8281    6205  0 22:24 pts/1    00:00:00 grep --color=auto hexo</span><br><span class="line">➜  Scripts ps -ef | grep hexo | grep -v auto</span><br><span class="line">tangshp     6109    5504  1 20:42 pts/0    00:01:56 hexo</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">ps</span> -ef <span class="token operator">|</span> <span class="token function">grep</span> hexo         
+tangshp     <span class="token number">6109</span>    <span class="token number">5504</span>  <span class="token number">1</span> <span class="token number">20</span>:42 pts/0    00:01:56 hexo
+tangshp     <span class="token number">8281</span>    <span class="token number">6205</span>  <span class="token number">0</span> <span class="token number">22</span>:24 pts/1    00:00:00 <span class="token function">grep</span> --color<span class="token operator">=</span>auto hexo
+➜  Scripts <span class="token function">ps</span> -ef <span class="token operator">|</span> <span class="token function">grep</span> hexo <span class="token operator">|</span> <span class="token function">grep</span> -v auto
+tangshp     <span class="token number">6109</span>    <span class="token number">5504</span>  <span class="token number">1</span> <span class="token number">20</span>:42 pts/0    00:01:56 hexo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </blockquote>
 </li>
 <li><p><code>w</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts <span class="built_in">echo</span> hello helloworld | grep -w hello</span><br><span class="line">hello helloworld</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token builtin class-name">echo</span> hello helloworld <span class="token operator">|</span> <span class="token function">grep</span> -w hello
+hello helloworld<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p><img src="/images/shell/grepw.png" alt="结果"></p>
 <blockquote>
 <p><code>\b</code>表示边界</p>
@@ -463,7 +514,9 @@
 </tbody>
 </table>
 </div>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts sed -r <span class="string">&#x27;s#orange#apple#g&#x27;</span> ./question_mark.txt </span><br><span class="line">Peel the apples and divide them into segments.</span><br><span class="line">a bright shade of apple%     </span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">sed</span> -r <span class="token string">'s#orange#apple#g'</span> ./question_mark.txt 
+Peel the apples and divide them into segments.
+a bright shade of apple%     <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>把<code>orange</code>替换为<code>apple</code></p>
 </blockquote>
@@ -534,25 +587,46 @@
 </tbody>
 </table>
 </div>
-<p><code>sed_test.txt</code><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">10:00 赵 211324198705244720</span><br><span class="line">10:10 钱 500224197105168312</span><br><span class="line">10:20 孙 1233211234569sunSS</span><br><span class="line">10:30 李 liliangcheng</span><br><span class="line">10:40 周 zhou21132693130593</span><br><span class="line">10:50 吴 14052219961008852X</span><br><span class="line">10:60 郑 431009199606233566</span><br><span class="line">10:70 王 47001320060315X365</span><br></pre></td></tr></table></figure></p>
+<p><code>sed_test.txt</code><br><pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">10:00 赵 211324198705244720
+10:10 钱 500224197105168312
+10:20 孙 1233211234569sunSS
+10:30 李 liliangcheng
+10:40 周 zhou21132693130593
+10:50 吴 14052219961008852X
+10:60 郑 431009199606233566
+10:70 王 47001320060315X365<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
 <ul>
 <li><strong>查找示例</strong></li>
 </ul>
 <ul>
 <li><p><code>demo0</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts sed -n <span class="string">&#x27;3p&#x27;</span> ./sed_test.txt </span><br><span class="line">10:20 孙 1233211234569sunSS</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">sed</span> -n <span class="token string">'3p'</span> ./sed_test.txt 
+<span class="token number">10</span>:20 孙 1233211234569sunSS<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
 <li><p><code>demo1</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts sed -n <span class="string">&#x27;2,4p&#x27;</span> ./sed_test.txt</span><br><span class="line">10:10 钱 500224197105168312</span><br><span class="line">10:20 孙 1233211234569sunSS</span><br><span class="line">10:30 李 liliangcheng</span><br><span class="line">➜  Scripts sed -n <span class="string">&#x27;7,$p&#x27;</span> ./sed_test.txt             </span><br><span class="line">10:60 郑 431009199606233566</span><br><span class="line">10:70 王 47001320060315X365</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">sed</span> -n <span class="token string">'2,4p'</span> ./sed_test.txt
+<span class="token number">10</span>:10 钱 <span class="token number">500224197105168312</span>
+<span class="token number">10</span>:20 孙 1233211234569sunSS
+<span class="token number">10</span>:30 李 liliangcheng
+➜  Scripts <span class="token function">sed</span> -n <span class="token string">'7,$p'</span> ./sed_test.txt             
+<span class="token number">10</span>:60 郑 <span class="token number">431009199606233566</span>
+<span class="token number">10</span>:70 王 47001320060315X365<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p><code>demo2</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts sed -nr <span class="string">&#x27;/[0-9]&#123;17&#125;[0-9X]/p&#x27;</span> ./sed_test.txt</span><br><span class="line">10:00 赵 211324198705244720</span><br><span class="line">10:10 钱 500224197105168312</span><br><span class="line">10:50 吴 14052219961008852X</span><br><span class="line">10:60 郑 431009199606233566</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">sed</span> -nr <span class="token string">'/[0-9]&#123;17&#125;[0-9X]/p'</span> ./sed_test.txt
+<span class="token number">10</span>:00 赵 <span class="token number">211324198705244720</span>
+<span class="token number">10</span>:10 钱 <span class="token number">500224197105168312</span>
+<span class="token number">10</span>:50 吴 14052219961008852X
+<span class="token number">10</span>:60 郑 <span class="token number">431009199606233566</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><code>-r</code>表示使用扩展正则表达式</p>
 </blockquote>
 </li>
 <li><p><code>demo3</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts sed -n <span class="string">&#x27;/10:30/,/10:50/p&#x27;</span> ./sed_test.txt </span><br><span class="line">10:30 李 liliangcheng</span><br><span class="line">10:40 周 zhou21132693130593</span><br><span class="line">10:50 吴 14052219961008852X</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">sed</span> -n <span class="token string">'/10:30/,/10:50/p'</span> ./sed_test.txt 
+<span class="token number">10</span>:30 李 liliangcheng
+<span class="token number">10</span>:40 周 zhou21132693130593
+<span class="token number">10</span>:50 吴 14052219961008852X<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 <h3 id="删除-delete"><a href="#删除-delete" class="headerlink" title="删除-delete"></a>删除-<code>delete</code></h3><ul>
@@ -595,23 +669,63 @@
 <li><p><strong>删除示例</strong></p>
 <ul>
 <li><p>删除第<code>x</code>行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts sed <span class="string">&#x27;1d&#x27;</span> ./sed_test.txt              </span><br><span class="line">10:10 钱 500224197105168312</span><br><span class="line">10:20 孙 1233211234569sunSS</span><br><span class="line">10:30 李 liliangcheng</span><br><span class="line">10:40 周 zhou21132693130593</span><br><span class="line">10:50 吴 14052219961008852X</span><br><span class="line">10:60 郑 431009199606233566</span><br><span class="line">10:70 王 47001320060315X365%</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">sed</span> <span class="token string">'1d'</span> ./sed_test.txt              
+<span class="token number">10</span>:10 钱 <span class="token number">500224197105168312</span>
+<span class="token number">10</span>:20 孙 1233211234569sunSS
+<span class="token number">10</span>:30 李 liliangcheng
+<span class="token number">10</span>:40 周 zhou21132693130593
+<span class="token number">10</span>:50 吴 14052219961008852X
+<span class="token number">10</span>:60 郑 <span class="token number">431009199606233566</span>
+<span class="token number">10</span>:70 王 47001320060315X365%<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>删除第<code>n</code>行到第<code>m</code>行  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts sed <span class="string">&#x27;5,8d&#x27;</span> ./sed_test.txt</span><br><span class="line">10:00 赵 211324198705244720</span><br><span class="line">10:10 钱 500224197105168312</span><br><span class="line">10:20 孙 1233211234569sunSS</span><br><span class="line">10:30 李 liliangcheng</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">sed</span> <span class="token string">'5,8d'</span> ./sed_test.txt
+<span class="token number">10</span>:00 赵 <span class="token number">211324198705244720</span>
+<span class="token number">10</span>:10 钱 <span class="token number">500224197105168312</span>
+<span class="token number">10</span>:20 孙 1233211234569sunSS
+<span class="token number">10</span>:30 李 liliangcheng<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>查找符合<code>regular</code>的行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts sed -r <span class="string">&#x27;/[0-9]&#123;17&#125;[0-9xX]/d&#x27;</span> ./sed_test.txt</span><br><span class="line">10:20 孙 1233211234569sunSS</span><br><span class="line">10:30 李 liliangcheng</span><br><span class="line">10:40 周 zhou21132693130593</span><br><span class="line">10:70 王 47001320060315X365% </span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">sed</span> -r <span class="token string">'/[0-9]&#123;17&#125;[0-9xX]/d'</span> ./sed_test.txt
+<span class="token number">10</span>:20 孙 1233211234569sunSS
+<span class="token number">10</span>:30 李 liliangcheng
+<span class="token number">10</span>:40 周 zhou21132693130593
+<span class="token number">10</span>:70 王 47001320060315X365% <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>表示范围过滤</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts sed -r <span class="string">&#x27;/10:20/,/10:50/d&#x27;</span> ./sed_test.txt</span><br><span class="line">10:00 赵 211324198705244720</span><br><span class="line">10:10 钱 500224197105168312</span><br><span class="line">10:60 郑 431009199606233566</span><br><span class="line">10:70 王 47001320060315X365%</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">sed</span> -r <span class="token string">'/10:20/,/10:50/d'</span> ./sed_test.txt
+<span class="token number">10</span>:00 赵 <span class="token number">211324198705244720</span>
+<span class="token number">10</span>:10 钱 <span class="token number">500224197105168312</span>
+<span class="token number">10</span>:60 郑 <span class="token number">431009199606233566</span>
+<span class="token number">10</span>:70 王 47001320060315X365%<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>删除空行或则带<code>#</code>号的行<br><strong>方法一</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts sed -r <span class="string">&#x27;/^$|#/d&#x27;</span> /etc/ssh/sshd_config</span><br><span class="line">Include /etc/ssh/sshd_config.d/*.conf</span><br><span class="line">ChallengeResponseAuthentication no</span><br><span class="line">UsePAM yes</span><br><span class="line">X11Forwarding yes</span><br><span class="line">PrintMotd no</span><br><span class="line">AcceptEnv LANG LC_*</span><br><span class="line">Subsystem       sftp    /usr/lib/openssh/sftp-server</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">sed</span> -r <span class="token string">'/^$|#/d'</span> /etc/ssh/sshd_config
+Include /etc/ssh/sshd_config.d/*.conf
+ChallengeResponseAuthentication no
+UsePAM <span class="token function">yes</span>
+X11Forwarding <span class="token function">yes</span>
+PrintMotd no
+AcceptEnv <span class="token environment constant">LANG</span> LC_*
+Subsystem       <span class="token function">sftp</span>    /usr/lib/openssh/sftp-server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>方法二</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts egrep -v <span class="string">&#x27;^$|#&#x27;</span> /etc/ssh/sshd_config</span><br><span class="line">Include /etc/ssh/sshd_config.d/*.conf</span><br><span class="line">ChallengeResponseAuthentication no</span><br><span class="line">UsePAM yes</span><br><span class="line">X11Forwarding yes</span><br><span class="line">PrintMotd no</span><br><span class="line">AcceptEnv LANG LC_*</span><br><span class="line">Subsystem       sftp    /usr/lib/openssh/sftp-server</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">egrep</span> -v <span class="token string">'^$|#'</span> /etc/ssh/sshd_config
+Include /etc/ssh/sshd_config.d/*.conf
+ChallengeResponseAuthentication no
+UsePAM <span class="token function">yes</span>
+X11Forwarding <span class="token function">yes</span>
+PrintMotd no
+AcceptEnv <span class="token environment constant">LANG</span> LC_*
+Subsystem       <span class="token function">sftp</span>    /usr/lib/openssh/sftp-server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>!</code><strong>的妙用</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts sed -rn <span class="string">&#x27;/^$|#/!p&#x27;</span> /etc/ssh/sshd_config</span><br><span class="line">Include /etc/ssh/sshd_config.d/*.conf</span><br><span class="line">ChallengeResponseAuthentication no</span><br><span class="line">UsePAM yes</span><br><span class="line">X11Forwarding yes</span><br><span class="line">PrintMotd no</span><br><span class="line">AcceptEnv LANG LC_*</span><br><span class="line">Subsystem       sftp    /usr/lib/openssh/sftp-server</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">sed</span> -rn <span class="token string">'/^$|#/!p'</span> /etc/ssh/sshd_config
+Include /etc/ssh/sshd_config.d/*.conf
+ChallengeResponseAuthentication no
+UsePAM <span class="token function">yes</span>
+X11Forwarding <span class="token function">yes</span>
+PrintMotd no
+AcceptEnv <span class="token environment constant">LANG</span> LC_*
+Subsystem       <span class="token function">sftp</span>    /usr/lib/openssh/sftp-server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><code>-r</code>表示扩展,<code>-n</code>表示符合的才打印,<code>!</code>表示取反;</p>
 </blockquote>
@@ -683,63 +797,136 @@
 <li><p>示例</p>
 <ul>
 <li><p><code>append</code>追加,在第二行后添加</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts sed <span class="string">&#x27;2a 10:15 谭 63269199308363956x&#x27;</span> ./sed_test.txt</span><br><span class="line">10:00 赵 211324198705244720</span><br><span class="line">10:10 钱 500224197105168312</span><br><span class="line">10:15 谭 63269199308363956x</span><br><span class="line">10:20 孙 1233211234569sunSS</span><br><span class="line">10:30 李 liliangcheng</span><br><span class="line">10:40 周 zhou21132693130593</span><br><span class="line">10:50 吴 14052219961008852X</span><br><span class="line">10:60 郑 431009199606233566</span><br><span class="line">10:70 王 47001320060315X365% </span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">sed</span> <span class="token string">'2a 10:15 谭 63269199308363956x'</span> ./sed_test.txt
+<span class="token number">10</span>:00 赵 <span class="token number">211324198705244720</span>
+<span class="token number">10</span>:10 钱 <span class="token number">500224197105168312</span>
+<span class="token number">10</span>:15 谭 63269199308363956x
+<span class="token number">10</span>:20 孙 1233211234569sunSS
+<span class="token number">10</span>:30 李 liliangcheng
+<span class="token number">10</span>:40 周 zhou21132693130593
+<span class="token number">10</span>:50 吴 14052219961008852X
+<span class="token number">10</span>:60 郑 <span class="token number">431009199606233566</span>
+<span class="token number">10</span>:70 王 47001320060315X365% <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><code>2a</code>后面的空格可有可无</p>
 </blockquote>
 </li>
 <li><p><code>insert</code>插入,在第二行前添加</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts sed <span class="string">&#x27;2i 10:15 谭 63269199308363956x&#x27;</span> ./sed_test.txt</span><br><span class="line">10:00 赵 211324198705244720</span><br><span class="line">10:15 谭 63269199308363956x</span><br><span class="line">10:10 钱 500224197105168312</span><br><span class="line">10:20 孙 1233211234569sunSS</span><br><span class="line">10:30 李 liliangcheng</span><br><span class="line">10:40 周 zhou21132693130593</span><br><span class="line">10:50 吴 14052219961008852X</span><br><span class="line">10:60 郑 431009199606233566</span><br><span class="line">10:70 王 47001320060315X365%</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">sed</span> <span class="token string">'2i 10:15 谭 63269199308363956x'</span> ./sed_test.txt
+<span class="token number">10</span>:00 赵 <span class="token number">211324198705244720</span>
+<span class="token number">10</span>:15 谭 63269199308363956x
+<span class="token number">10</span>:10 钱 <span class="token number">500224197105168312</span>
+<span class="token number">10</span>:20 孙 1233211234569sunSS
+<span class="token number">10</span>:30 李 liliangcheng
+<span class="token number">10</span>:40 周 zhou21132693130593
+<span class="token number">10</span>:50 吴 14052219961008852X
+<span class="token number">10</span>:60 郑 <span class="token number">431009199606233566</span>
+<span class="token number">10</span>:70 王 47001320060315X365%<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p><code>replace</code>替代,把第二行替换为指定内容</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts sed <span class="string">&#x27;2c 10:15 谭 63269199308363956x&#x27;</span> ./sed_test.txt</span><br><span class="line">10:00 赵 211324198705244720</span><br><span class="line">10:15 谭 63269199308363956x</span><br><span class="line">10:20 孙 1233211234569sunSS</span><br><span class="line">10:30 李 liliangcheng</span><br><span class="line">10:40 周 zhou21132693130593</span><br><span class="line">10:50 吴 14052219961008852X</span><br><span class="line">10:60 郑 431009199606233566</span><br><span class="line">10:70 王 47001320060315X365% </span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">sed</span> <span class="token string">'2c 10:15 谭 63269199308363956x'</span> ./sed_test.txt
+<span class="token number">10</span>:00 赵 <span class="token number">211324198705244720</span>
+<span class="token number">10</span>:15 谭 63269199308363956x
+<span class="token number">10</span>:20 孙 1233211234569sunSS
+<span class="token number">10</span>:30 李 liliangcheng
+<span class="token number">10</span>:40 周 zhou21132693130593
+<span class="token number">10</span>:50 吴 14052219961008852X
+<span class="token number">10</span>:60 郑 <span class="token number">431009199606233566</span>
+<span class="token number">10</span>:70 王 47001320060315X365% <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>运用-在文件结尾添加<br><strong>方法</strong>-<code>cat</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts cat &gt;&gt;ascii.txt&lt;&lt;<span class="string">&#x27;EOF&#x27;</span></span><br><span class="line">heredoc&gt; </span><br><span class="line">heredoc&gt; ABCDEFGHIJKLMNOPKRSTUVWXYZ</span><br><span class="line">heredoc&gt; EOF </span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">000   0     00    NUL &#x27;\0&#x27; (null character)   100   64    40    @</span><br><span class="line">001   1     01    SOH (start of heading)      101   65    41    A</span><br><span class="line">ABCDEFGHIJKLMNOPQRSNUVWXYZEOF</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">cat</span> <span class="token operator">>></span>ascii.txt<span class="token operator">&lt;&lt;</span><span class="token string">'EOF'</span>
+heredoc<span class="token operator">></span> 
+heredoc<span class="token operator">></span> ABCDEFGHIJKLMNOPKRSTUVWXYZ
+heredoc<span class="token operator">></span> EOF <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">000   0     00    NUL '\0' (null character)   100   64    40    @
+001   1     01    SOH (start of heading)      101   65    41    A
+ABCDEFGHIJKLMNOPQRSNUVWXYZEOF<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p><strong>方法</strong>-<code>sed</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts sed <span class="string">&#x27;$a ABCDEFGHIJKLMNOPKRSTUVWXYZ\nabcdefghijklmnopqrstuvwxyz&#x27;</span> ./ascii.txt</span><br><span class="line">000   0     00    NUL <span class="string">&#x27;\0&#x27;</span> (null character)   100   64    40    @</span><br><span class="line">001   1     01    SOH (start of heading)      101   65    41    A</span><br><span class="line">ABCDEFGHIJKLMNOPKRSTUVWXYZ</span><br><span class="line">abcdefghijklmnopqrstuvwxyz</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">sed</span> <span class="token string">'$a ABCDEFGHIJKLMNOPKRSTUVWXYZ\nabcdefghijklmnopqrstuvwxyz'</span> ./ascii.txt
+000   <span class="token number">0</span>     00    NUL <span class="token string">'\0'</span> <span class="token punctuation">(</span>null character<span class="token punctuation">)</span>   <span class="token number">100</span>   <span class="token number">64</span>    <span class="token number">40</span>    @
+001   <span class="token number">1</span>     01    SOH <span class="token punctuation">(</span>start of heading<span class="token punctuation">)</span>      <span class="token number">101</span>   <span class="token number">65</span>    <span class="token number">41</span>    A
+ABCDEFGHIJKLMNOPKRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 </li>
 </ul>
 <h3 id="sed-替换s"><a href="#sed-替换s" class="headerlink" title="sed-替换s"></a>sed-替换s</h3><ul>
 <li><p>demo1</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts sed <span class="string">&#x27;s# ##g&#x27;</span> ./ascii.txt                                                   </span><br><span class="line">000000NUL<span class="string">&#x27;\0&#x27;</span>(nullcharacter)1006440@</span><br><span class="line">001101SOH(startofheading)1016541A% </span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">sed</span> <span class="token string">'s# ##g'</span> ./ascii.txt                                                   
+000000NUL<span class="token string">'\0'</span><span class="token punctuation">(</span>nullcharacter<span class="token punctuation">)</span><span class="token number">1006440</span>@
+001101SOH<span class="token punctuation">(</span>startofheading<span class="token punctuation">)</span>1016541A% <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>把<code>空格替换为空</code>,第一个<code>#</code>和第二个<code>#</code>之间用于查找,第二个<code>#</code>和第三个<code>#</code>之间用于替换<br>‘-g’表示全局替换, 否则默认替换每行第一个匹配的对象</p>
 </blockquote>
 </li>
 <li><p>demo2</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts sed <span class="string">&#x27;s#00#XX#g&#x27;</span> ./ascii.txt</span><br><span class="line">XX0   0     XX    NUL <span class="string">&#x27;\0&#x27;</span> (null character)   1XX   64    40    @</span><br><span class="line">XX1   1     01    SOH (start of heading)      101   65    41    A%</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">sed</span> <span class="token string">'s#00#XX#g'</span> ./ascii.txt
+XX0   <span class="token number">0</span>     XX    NUL <span class="token string">'\0'</span> <span class="token punctuation">(</span>null character<span class="token punctuation">)</span>   1XX   <span class="token number">64</span>    <span class="token number">40</span>    @
+XX1   <span class="token number">1</span>     01    SOH <span class="token punctuation">(</span>start of heading<span class="token punctuation">)</span>      <span class="token number">101</span>   <span class="token number">65</span>    <span class="token number">41</span>    A%<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>后向引用</p>
 <ul>
 <li><p>把<code>123456</code>变成<code>&lt;123456&gt;</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts <span class="built_in">echo</span> 123456 | sed -r <span class="string">&#x27;s#(.*)#&lt;\1&gt;#g&#x27;</span></span><br><span class="line">&lt;123456&gt;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token builtin class-name">echo</span> <span class="token number">123456</span> <span class="token operator">|</span> <span class="token function">sed</span> -r <span class="token string">'s#(.*)#&lt;\1>#g'</span>
+<span class="token operator">&lt;</span><span class="token number">12345</span><span class="token operator"><span class="token file-descriptor important">6</span>></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <blockquote>
 <p><code>()</code>表示把括号内的内容保护起来</p>
 </blockquote>
 </li>
 <li><p>把<code>123456</code>变成<code>12&lt;34&gt;56</code><br>把<code>34</code>替换为<code>&lt;34&gt;</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts <span class="built_in">echo</span> 123456 | sed -r <span class="string">&#x27;s#(34)#&lt;\1&gt;#g&#x27;</span></span><br><span class="line">12&lt;34&gt;56</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token builtin class-name">echo</span> <span class="token number">123456</span> <span class="token operator">|</span> <span class="token function">sed</span> -r <span class="token string">'s#(34)#&lt;\1>#g'</span>
+<span class="token number">1</span><span class="token operator"><span class="token file-descriptor important">2</span>&lt;</span><span class="token number">3</span><span class="token operator"><span class="token file-descriptor important">4</span>></span><span class="token number">56</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <blockquote>
 <p><code>-r</code>表示使用扩展正则</p>
 </blockquote>
 </li>
 <li><p>把表情<code>@_^</code>变成<code>^_@</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts <span class="built_in">echo</span> @_^ | sed -r <span class="string">&quot;s#(^.*)_(.*$)#\2_\1#g&quot;</span></span><br><span class="line">^_@</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token builtin class-name">echo</span> @_^ <span class="token operator">|</span> <span class="token function">sed</span> -r <span class="token string">"s#(^.*)_(.*$)#<span class="token entity" title="\2">\2</span>_<span class="token entity" title="\1">\1</span>#g"</span>
+^_@<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <blockquote>
 <p><code>\1</code>和<code>\2</code>分别表示第一个括号和第二个括号</p>
 </blockquote>
 </li>
 <li><p>获取<code>ip</code>地址</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts ip a s eth0   </span><br><span class="line">2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP group default qlen 1000</span><br><span class="line">link/ether dc:a6:32:f1:16:3e brd ff:fe:fe:af:ff:ff</span><br><span class="line">inet 122.138.3.43/24 brd 152.148.4.255 scope global dynamic noprefixroute eth0</span><br><span class="line">   valid_lft 84618sec preferred_lft 84618sec</span><br><span class="line">inet6 2408:8352:440:30b1:d734:3ba9:b69f:465c/64 scope global dynamic noprefixroute </span><br><span class="line">   valid_lft 189380sec preferred_lft 102980sec</span><br><span class="line">inet6 fe80::cbc3:d989:ae00:fc7c/64 scope link noprefixroute </span><br><span class="line">   valid_lft forever preferred_lft forever</span><br><span class="line"></span><br><span class="line">➜  Scripts ip a s eth0 | sed -n <span class="string">&#x27;3p&#x27;</span> | sed -r <span class="string">&#x27;s#(^.*inet )(.*)(/24 .*)#\2#&#x27;</span></span><br><span class="line">122.138.3.43</span><br><span class="line"><span class="comment"># 精简</span></span><br><span class="line">➜  Scripts ip a s eth0 | sed -rn <span class="string">&#x27;3s#(^.*inet )(.*)(/24 .*)#\2#gp&#x27;</span></span><br><span class="line">122.138.3.43</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">ip</span> a s eth0   
+<span class="token number">2</span>: eth0: <span class="token operator">&lt;</span>BROADCAST,MULTICAST,UP,LOWER_UP<span class="token operator">></span> mtu <span class="token number">1500</span> qdisc mq state UP group default qlen <span class="token number">1000</span>
+link/ether dc:a6:32:f1:16:3e brd ff:fe:fe:af:ff:ff
+inet <span class="token number">122.138</span>.3.43/24 brd <span class="token number">152.148</span>.4.255 scope global dynamic noprefixroute eth0
+   valid_lft 84618sec preferred_lft 84618sec
+inet6 <span class="token number">2408</span>:8352:440:30b1:d734:3ba9:b69f:465c/64 scope global dynamic noprefixroute 
+   valid_lft 189380sec preferred_lft 102980sec
+inet6 fe80::cbc3:d989:ae00:fc7c/64 scope <span class="token function">link</span> noprefixroute 
+   valid_lft forever preferred_lft forever
+
+➜  Scripts <span class="token function">ip</span> a s eth0 <span class="token operator">|</span> <span class="token function">sed</span> -n <span class="token string">'3p'</span> <span class="token operator">|</span> <span class="token function">sed</span> -r <span class="token string">'s#(^.*inet )(.*)(/24 .*)#\2#'</span>
+<span class="token number">122.138</span>.3.43
+<span class="token comment"># 精简</span>
+➜  Scripts <span class="token function">ip</span> a s eth0 <span class="token operator">|</span> <span class="token function">sed</span> -rn <span class="token string">'3s#(^.*inet )(.*)(/24 .*)#\2#gp'</span>
+<span class="token number">122.138</span>.3.43<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="/images/shell/regular_jet.png" alt="结果"></p>
 <p><a target="_blank" rel="noopener" href="https://jex.im/regulex/">jex.im/regulex</a></p>
 </li>
 <li><p>获取文件权限</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts <span class="built_in">stat</span> /etc/hosts                                                     </span><br><span class="line">  File: /etc/hosts</span><br><span class="line">  Size: 230             Blocks: 8          IO Block: 4096   regular file</span><br><span class="line">Device: b302h/45826d    Inode: 475         Links: 1</span><br><span class="line">Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2020-10-29 10:04:22.858250738 +0800</span><br><span class="line">Modify: 2020-04-02 01:26:24.731999903 +0800</span><br><span class="line">Change: 2020-04-02 01:26:24.731999903 +0800</span><br><span class="line"> Birth: -</span><br><span class="line"></span><br><span class="line">➜  Scripts <span class="built_in">stat</span> /etc/hosts | sed -n <span class="string">&#x27;4p&#x27;</span> | sed -r <span class="string">&#x27;s#^.*\(0(.*)/-r.*$#\1#g&#x27;</span></span><br><span class="line">644</span><br><span class="line"></span><br><span class="line">➜  Scripts <span class="built_in">stat</span> /etc/hosts | sed -n <span class="string">&#x27;4p&#x27;</span> | sed -r <span class="string">&#x27;s#^.*\(0(.*)\)  Uid.*$#\1#g&#x27;</span> </span><br><span class="line">644/-rw-r--r--</span><br><span class="line"></span><br><span class="line">➜  Scripts <span class="built_in">stat</span> -c%a /etc/hosts </span><br><span class="line">644</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">stat</span> /etc/hosts                                                     
+  File: /etc/hosts
+  Size: <span class="token number">230</span>             Blocks: <span class="token number">8</span>          IO Block: <span class="token number">4096</span>   regular <span class="token function">file</span>
+Device: b302h/45826d    Inode: <span class="token number">475</span>         Links: <span class="token number">1</span>
+Access: <span class="token punctuation">(</span>0644/-rw-r--r--<span class="token punctuation">)</span>  Uid: <span class="token punctuation">(</span>    <span class="token number">0</span>/    root<span class="token punctuation">)</span>   Gid: <span class="token punctuation">(</span>    <span class="token number">0</span>/    root<span class="token punctuation">)</span>
+Access: <span class="token number">2020</span>-10-29 <span class="token number">10</span>:04:22.858250738 +0800
+Modify: <span class="token number">2020</span>-04-02 01:26:24.731999903 +0800
+Change: <span class="token number">2020</span>-04-02 01:26:24.731999903 +0800
+ Birth: -
+
+➜  Scripts <span class="token function">stat</span> /etc/hosts <span class="token operator">|</span> <span class="token function">sed</span> -n <span class="token string">'4p'</span> <span class="token operator">|</span> <span class="token function">sed</span> -r <span class="token string">'s#^.*\(0(.*)/-r.*$#\1#g'</span>
+<span class="token number">644</span>
+
+➜  Scripts <span class="token function">stat</span> /etc/hosts <span class="token operator">|</span> <span class="token function">sed</span> -n <span class="token string">'4p'</span> <span class="token operator">|</span> <span class="token function">sed</span> -r <span class="token string">'s#^.*\(0(.*)\)  Uid.*$#\1#g'</span> 
+<span class="token number">644</span>/-rw-r--r--
+
+➜  Scripts <span class="token function">stat</span> -c%a /etc/hosts 
+<span class="token number">644</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 </li>
@@ -750,7 +937,12 @@ in the current version of Brian Kernighan&#39;s awk and numerous GNU-specific ex
 <h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h3><ul>
 <li>格式<br><code>条件&#123;动作&#125;</code></li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts awk  <span class="string">&#x27;BEGIN&#123;print &quot;begin of awk&quot;&#125;NR&gt;=2&amp;&amp;NR&lt;=4&#123;print $1&#125;END&#123;print &quot;end of file&quot;&#125;&#x27;</span> ./id.txt</span><br><span class="line">begin of awk</span><br><span class="line">钱</span><br><span class="line">孙</span><br><span class="line">李</span><br><span class="line">end of file</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">awk</span>  <span class="token string">'BEGIN&#123;print "begin of awk"&#125;NR>=2&amp;&amp;NR&lt;=4&#123;print $1&#125;END&#123;print "end of file"&#125;'</span> ./id.txt
+begin of <span class="token function">awk</span>
+钱
+孙
+李
+end of <span class="token function">file</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>1、<code>BEGIN&#123;&#125;</code> 是<strong>预处理</strong><br>2、<code>END&#123;&#125;</code>   是<strong>后处理</strong><br>3、<code>NR&gt;=2&amp;&amp;NR&lt;=4&#123;print $1&#125;</code> <strong>条件{动作}</strong>, 表示取出[2,4]行中第1列数据<br>4、<code>$0</code>表示整行</p>
 </blockquote>
@@ -812,25 +1004,79 @@ in the current version of Brian Kernighan&#39;s awk and numerous GNU-specific ex
 </tbody>
 </table>
 </div>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts awk <span class="string">&#x27;NR==1&#x27;</span> ./sed_test.txt                                                               </span><br><span class="line">10:00 赵 211324198705244720</span><br><span class="line"></span><br><span class="line">➜  Scripts awk <span class="string">&#x27;NR&gt;=1 &amp;&amp; NR&lt;=4&#x27;</span> ./sed_test.txt</span><br><span class="line">10:00 赵 211324198705244720</span><br><span class="line">10:10 钱 500224197105168312</span><br><span class="line">10:20 孙 1233211234569sunSS</span><br><span class="line">10:30 李 liliangcheng</span><br><span class="line"></span><br><span class="line">➜  Scripts awk <span class="string">&#x27;/li/&#x27;</span> ./sed_test.txt</span><br><span class="line">10:30 李 liliangcheng</span><br><span class="line"></span><br><span class="line">➜  Scripts awk <span class="string">&#x27;/10:20/,/10:40/&#x27;</span> ./sed_test.txt</span><br><span class="line">10:20 孙 1233211234569sunSS</span><br><span class="line">10:30 李 liliangcheng</span><br><span class="line">10:40 周 zhou21132693130593</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">awk</span> <span class="token string">'NR==1'</span> ./sed_test.txt                                                               
+<span class="token number">10</span>:00 赵 <span class="token number">211324198705244720</span>
+
+➜  Scripts <span class="token function">awk</span> <span class="token string">'NR>=1 &amp;&amp; NR&lt;=4'</span> ./sed_test.txt
+<span class="token number">10</span>:00 赵 <span class="token number">211324198705244720</span>
+<span class="token number">10</span>:10 钱 <span class="token number">500224197105168312</span>
+<span class="token number">10</span>:20 孙 1233211234569sunSS
+<span class="token number">10</span>:30 李 liliangcheng
+
+➜  Scripts <span class="token function">awk</span> <span class="token string">'/li/'</span> ./sed_test.txt
+<span class="token number">10</span>:30 李 liliangcheng
+
+➜  Scripts <span class="token function">awk</span> <span class="token string">'/10:20/,/10:40/'</span> ./sed_test.txt
+<span class="token number">10</span>:20 孙 1233211234569sunSS
+<span class="token number">10</span>:30 李 liliangcheng
+<span class="token number">10</span>:40 周 zhou21132693130593<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p><strong>取列</strong><br>通过<code>-F</code>指定分隔符,指定每一列的结束符标记(默认是空格,连续的空格,<code>tab</code>键), <code>$x</code>表示第<code>x</code>列; </p>
 <ul>
 <li><p>取出<code>ls -lh</code>的结果中的第<code>[1,end)</code>行第5,9列的内容</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts ls -lh | awk <span class="string">&#x27;NR&gt;1&#123;print $5,$9&#125;&#x27;</span> | column -t</span><br><span class="line">40   0-debug.sh</span><br><span class="line">131  ascii.txt</span><br><span class="line">137  bracket.txt</span><br><span class="line">56   echo_a.txt</span><br><span class="line">603  grep_help.txt</span><br><span class="line">10   id_card_list.txt</span><br><span class="line">177  id.txt</span><br><span class="line">78   p.py</span><br><span class="line">72   question_mark.txt</span><br><span class="line">225  sed_test.txt</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">ls</span> -lh <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'NR>1&#123;print $5,$9&#125;'</span> <span class="token operator">|</span> <span class="token function">column</span> -t
+<span class="token number">40</span>   <span class="token number">0</span>-debug.sh
+<span class="token number">131</span>  ascii.txt
+<span class="token number">137</span>  bracket.txt
+<span class="token number">56</span>   echo_a.txt
+<span class="token number">603</span>  grep_help.txt
+<span class="token number">10</span>   id_card_list.txt
+<span class="token number">177</span>  id.txt
+<span class="token number">78</span>   p.py
+<span class="token number">72</span>   question_mark.txt
+<span class="token number">225</span>  sed_test.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><code>column -t</code>用作对齐,参考<a href="/2021/08/15/Linux-命令/">column -t</a></p>
 </blockquote>
 </li>
 <li><p>取出<code>ls -lh</code>的结果中的第<code>[1,end)</code>行第1,最后一列的内容</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts ls -lh | awk <span class="string">&#x27;NR&gt;1&#123;print $1,$NF&#125;&#x27;</span>            </span><br><span class="line">-rw-rw-r-- 0-debug.sh</span><br><span class="line">-rw-rw-r-- ascii.txt</span><br><span class="line">-rw-rw-r-- bracket.txt</span><br><span class="line">-rw-rw-r-- echo_a.txt</span><br><span class="line">-rw-rw-r-- grep_help.txt</span><br><span class="line">-rw-rw-r-- id_card_list.txt</span><br><span class="line">-rw-rw-r-- id.txt</span><br><span class="line">-rw-rw-r-- p.py</span><br><span class="line">-rw-rw-r-- question_mark.txt</span><br><span class="line">-rw-rw-r-- sed_test.txt</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">ls</span> -lh <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'NR>1&#123;print $1,$NF&#125;'</span>            
+-rw-rw-r-- <span class="token number">0</span>-debug.sh
+-rw-rw-r-- ascii.txt
+-rw-rw-r-- bracket.txt
+-rw-rw-r-- echo_a.txt
+-rw-rw-r-- grep_help.txt
+-rw-rw-r-- id_card_list.txt
+-rw-rw-r-- id.txt
+-rw-rw-r-- p.py
+-rw-rw-r-- question_mark.txt
+-rw-rw-r-- sed_test.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>指定分隔符</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts head -5 /etc/passwd                                   </span><br><span class="line">root:x:0:0:root:/root:/bin/bash</span><br><span class="line">daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin</span><br><span class="line">bin:x:2:2:bin:/bin:/usr/sbin/nologin</span><br><span class="line">sys:x:3:3:sys:/dev:/usr/sbin/nologin</span><br><span class="line">sync:x:4:65534:sync:/bin:/bin/sync</span><br><span class="line"></span><br><span class="line">➜  Scripts head -5 /etc/passwd | awk -F: <span class="string">&#x27;&#123;print $1,$NF&#125;&#x27;</span> | column -t  </span><br><span class="line">root    /bin/bash</span><br><span class="line">daemon  /usr/sbin/nologin</span><br><span class="line">bin     /usr/sbin/nologin</span><br><span class="line">sys     /usr/sbin/nologin</span><br><span class="line">sync    /bin/sync</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">head</span> -5 /etc/passwd                                   
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+
+➜  Scripts <span class="token function">head</span> -5 /etc/passwd <span class="token operator">|</span> <span class="token function">awk</span> -F: <span class="token string">'&#123;print $1,$NF&#125;'</span> <span class="token operator">|</span> <span class="token function">column</span> -t  
+root    /bin/bash
+daemon  /usr/sbin/nologin
+bin     /usr/sbin/nologin
+sys     /usr/sbin/nologin
+<span class="token function">sync</span>    /bin/sync<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><code>-F</code>支持扩展正则, 且默认支持扩展正则表达式</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts ip a s eth0 | awk <span class="string">&quot;NR==3&quot;</span>                             </span><br><span class="line">    inet 192.168.5.49/24 brd 192.168.5.255 scope global dynamic noprefixroute eth0</span><br><span class="line"></span><br><span class="line">➜  Scripts ip a s eth0 | awk <span class="string">&quot;NR==3&quot;</span> | awk -F<span class="string">&quot;[ /]+&quot;</span> <span class="string">&#x27;&#123;print $3&#125;&#x27;</span></span><br><span class="line">192.168.5.49</span><br><span class="line"></span><br><span class="line">➜  Scripts ip a s eth0 | awk -F<span class="string">&quot;[ /]+&quot;</span> <span class="string">&#x27;NR==3&#123;print $3&#125;&#x27;</span></span><br><span class="line">192.168.5.49</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">ip</span> a s eth0 <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">"NR==3"</span>                             
+    inet <span class="token number">192.168</span>.5.49/24 brd <span class="token number">192.168</span>.5.255 scope global dynamic noprefixroute eth0
+
+➜  Scripts <span class="token function">ip</span> a s eth0 <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">"NR==3"</span> <span class="token operator">|</span> <span class="token function">awk</span> -F<span class="token string">"[ /]+"</span> <span class="token string">'&#123;print $3&#125;'</span>
+<span class="token number">192.168</span>.5.49
+
+➜  Scripts <span class="token function">ip</span> a s eth0 <span class="token operator">|</span> <span class="token function">awk</span> -F<span class="token string">"[ /]+"</span> <span class="token string">'NR==3&#123;print $3&#125;'</span>
+<span class="token number">192.168</span>.5.49<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>1、第二个<code>awk</code>后的<code>print</code>必须使用<strong>单引号</strong><br>2、因为要指定分隔符为<strong>空格</strong>或则<code>/</code>,且可能需要多个空格,所以<code>-F</code>的参数要指定为<code>&quot;[ /]+&quot;</code><br>3、<code>inet</code>左边有<code>4</code>个空格, 这4个空格的左边对应<code>$1</code>, 所以<code>ip</code>地址对应着<code>$3</code></p>
 </blockquote>
@@ -839,7 +1085,19 @@ in the current version of Brian Kernighan&#39;s awk and numerous GNU-specific ex
 </li>
 </ul>
 <pre><code>- 保留原分隔符输出
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts head -5 /etc/passwd | awk -F: <span class="string">&#x27;&#123;print $1,&quot;:&quot;,$NF&#125;&#x27;</span></span><br><span class="line">root : /bin/bash</span><br><span class="line">daemon : /usr/sbin/nologin</span><br><span class="line">bin : /usr/sbin/nologin</span><br><span class="line">sys : /usr/sbin/nologin</span><br><span class="line">sync : /bin/sync</span><br><span class="line"></span><br><span class="line">➜  Scripts head-5 /etc/passwd | awk -F: -v OFS=: <span class="string">&#x27;&#123;print $1,$NF&#125;&#x27;</span>            </span><br><span class="line">root:/bin/bash</span><br><span class="line">daemon:/usr/sbin/nologin</span><br><span class="line">bin:/usr/sbin/nologin</span><br><span class="line">sys:/usr/sbin/nologin</span><br><span class="line">sync:/bin/sync</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">head</span> -5 /etc/passwd <span class="token operator">|</span> <span class="token function">awk</span> -F: <span class="token string">'&#123;print $1,":",$NF&#125;'</span>
+root <span class="token builtin class-name">:</span> /bin/bash
+daemon <span class="token builtin class-name">:</span> /usr/sbin/nologin
+bin <span class="token builtin class-name">:</span> /usr/sbin/nologin
+sys <span class="token builtin class-name">:</span> /usr/sbin/nologin
+<span class="token function">sync</span> <span class="token builtin class-name">:</span> /bin/sync
+
+➜  Scripts head-5 /etc/passwd <span class="token operator">|</span> <span class="token function">awk</span> -F: -v <span class="token assign-left variable">OFS</span><span class="token operator">=</span>: <span class="token string">'&#123;print $1,$NF&#125;'</span>            
+root:/bin/bash
+daemon:/usr/sbin/nologin
+bin:/usr/sbin/nologin
+sys:/usr/sbin/nologin
+sync:/bin/sync<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </code></pre><h3 id="内置变量"><a href="#内置变量" class="headerlink" title="内置变量"></a>内置变量</h3><div class="table-container">
 <table>
 <thead>
@@ -903,21 +1161,44 @@ in the current version of Brian Kernighan&#39;s awk and numerous GNU-specific ex
 </div>
 <ul>
 <li><p>第三列以2开头的行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts hheawk -F: <span class="string">&#x27;$3~/^2/&#x27;</span> /etc/passwd</span><br><span class="line">bin:x:2:2:bin:/bin:/usr/sbin/nologin</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts hheawk -F: <span class="token string">'$3~/^2/'</span> /etc/passwd
+bin:x:2:2:bin:/bin:/usr/sbin/nologin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
 <li><p>第2列为空的行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1::2</span><br><span class="line">1:2:3</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts awk -F: <span class="string">&#x27;$2~/^$/&#x27;</span> ./test.ini  </span><br><span class="line">1::2</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">1::2
+1:2:3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">awk</span> -F: <span class="token string">'$2~/^$/'</span> ./test.ini  
+<span class="token number">1</span>::2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
 <li><p>找到第3列以<code>2</code>开头的行,并打印第1列和第3列</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts awk -F: <span class="string">&#x27;NR==3&#123;print $0&#125;&#x27;</span> /etc/passwd</span><br><span class="line">bin:x:2:2:bin:/bin:/usr/sbin/nologin</span><br><span class="line">➜  Scripts awk -F: <span class="string">&#x27;$3~/^2/&#123;print $1 $3&#125;&#x27;</span> /etc/passwd</span><br><span class="line">bin2</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">awk</span> -F: <span class="token string">'NR==3&#123;print $0&#125;'</span> /etc/passwd
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+➜  Scripts <span class="token function">awk</span> -F: <span class="token string">'$3~/^2/&#123;print $1 $3&#125;'</span> /etc/passwd
+bin2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>找到第3列以<code>2</code>或则<code>3</code>开头的行,并打印第1列和第3列</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts awk -F: <span class="string">&#x27;$3~/^[23]/&#123;print $0&#125;&#x27;</span> /etc/passwd</span><br><span class="line">bin:x:2:2:bin:/bin:/usr/sbin/nologin</span><br><span class="line">sys:x:3:3:sys:/dev:/usr/sbin/nologin</span><br><span class="line">www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin</span><br><span class="line">backup:x:34:34:backup:/var/backups:/usr/sbin/nologin</span><br><span class="line">list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin</span><br><span class="line">irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin</span><br><span class="line">➜  Scripts awk -F: <span class="string">&#x27;$3~/^[23]/&#123;print $1 $3&#125;&#x27;</span> /etc/passwd</span><br><span class="line">bin2</span><br><span class="line">sys3</span><br><span class="line">www-data33</span><br><span class="line">backup34</span><br><span class="line">list38</span><br><span class="line">irc39</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">awk</span> -F: <span class="token string">'$3~/^[23]/&#123;print $0&#125;'</span> /etc/passwd
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+➜  Scripts <span class="token function">awk</span> -F: <span class="token string">'$3~/^[23]/&#123;print $1 $3&#125;'</span> /etc/passwd
+bin2
+sys3
+www-data33
+backup34
+list38
+irc39<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 <h3 id="awk范围"><a href="#awk范围" class="headerlink" title="awk范围"></a><code>awk</code>范围</h3><ul>
-<li>找到指定时间范围内的内容, 并精确定位指定列<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts awk <span class="string">&#x27;/10:30/,/10:60/&#123;print $2&#125;&#x27;</span> ./sed_test.txt</span><br><span class="line">李</span><br><span class="line">周</span><br><span class="line">吴</span><br><span class="line">郑</span><br></pre></td></tr></table></figure>
+<li>找到指定时间范围内的内容, 并精确定位指定列<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">awk</span> <span class="token string">'/10:30/,/10:60/&#123;print $2&#125;'</span> ./sed_test.txt
+李
+周
+吴
+郑<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 <h3 id="BEGIN和END"><a href="#BEGIN和END" class="headerlink" title="BEGIN和END"></a><code>BEGIN</code>和<code>END</code></h3><ul>
@@ -976,11 +1257,45 @@ in the current version of Brian Kernighan&#39;s awk and numerous GNU-specific ex
 <li><p><strong>示例</strong></p>
 <ul>
 <li><p><strong>统计空行的数量</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts awk <span class="string">&#x27;/^$/&#x27;</span> /etc/services </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">➜  Scripts awk <span class="string">&#x27;/^$/&#123;i++&#125;END&#123;print i&#125;&#x27;</span> /etc/services</span><br><span class="line">6</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">awk</span> <span class="token string">'/^$/'</span> /etc/services 
+
+
+
+
+
+
+➜  Scripts <span class="token function">awk</span> <span class="token string">'/^$/&#123;i++&#125;END&#123;print i&#125;'</span> /etc/services
+<span class="token number">6</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p><strong>求和</strong><br><code>test.csv</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1,2,3,4,5</span><br><span class="line">2,3,4,5,6</span><br><span class="line">3,4,5,6,7</span><br><span class="line">4,5,6,7,8</span><br><span class="line">5,6,7,8,9</span><br><span class="line">6,7,8,9,10</span><br><span class="line">7,8,9,10,11</span><br><span class="line">8,9,10,11,12</span><br><span class="line">9,10,11,12,13</span><br><span class="line">10,11,12,13,14</span><br><span class="line">11,12,13,14,15</span><br><span class="line">12,13,14,15,16</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts awk -F, <span class="string">&#x27;&#123;sum = sum + $2&#125;END&#123;print sum&#125;&#x27;</span> ./test.csv</span><br><span class="line">90</span><br><span class="line">➜  Scripts awk -F, <span class="string">&#x27;&#123;sum = sum + $2;print sum&#125;END&#123;print sum&#125;&#x27;</span> ./test.csv </span><br><span class="line">2</span><br><span class="line">5</span><br><span class="line">9</span><br><span class="line">14</span><br><span class="line">20</span><br><span class="line">27</span><br><span class="line">35</span><br><span class="line">44</span><br><span class="line">54</span><br><span class="line">65</span><br><span class="line">77</span><br><span class="line">90</span><br><span class="line">90</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-csv" data-language="csv"><code class="language-csv"><span class="token value">1</span><span class="token punctuation">,</span><span class="token value">2</span><span class="token punctuation">,</span><span class="token value">3</span><span class="token punctuation">,</span><span class="token value">4</span><span class="token punctuation">,</span><span class="token value">5</span>
+<span class="token value">2</span><span class="token punctuation">,</span><span class="token value">3</span><span class="token punctuation">,</span><span class="token value">4</span><span class="token punctuation">,</span><span class="token value">5</span><span class="token punctuation">,</span><span class="token value">6</span>
+<span class="token value">3</span><span class="token punctuation">,</span><span class="token value">4</span><span class="token punctuation">,</span><span class="token value">5</span><span class="token punctuation">,</span><span class="token value">6</span><span class="token punctuation">,</span><span class="token value">7</span>
+<span class="token value">4</span><span class="token punctuation">,</span><span class="token value">5</span><span class="token punctuation">,</span><span class="token value">6</span><span class="token punctuation">,</span><span class="token value">7</span><span class="token punctuation">,</span><span class="token value">8</span>
+<span class="token value">5</span><span class="token punctuation">,</span><span class="token value">6</span><span class="token punctuation">,</span><span class="token value">7</span><span class="token punctuation">,</span><span class="token value">8</span><span class="token punctuation">,</span><span class="token value">9</span>
+<span class="token value">6</span><span class="token punctuation">,</span><span class="token value">7</span><span class="token punctuation">,</span><span class="token value">8</span><span class="token punctuation">,</span><span class="token value">9</span><span class="token punctuation">,</span><span class="token value">10</span>
+<span class="token value">7</span><span class="token punctuation">,</span><span class="token value">8</span><span class="token punctuation">,</span><span class="token value">9</span><span class="token punctuation">,</span><span class="token value">10</span><span class="token punctuation">,</span><span class="token value">11</span>
+<span class="token value">8</span><span class="token punctuation">,</span><span class="token value">9</span><span class="token punctuation">,</span><span class="token value">10</span><span class="token punctuation">,</span><span class="token value">11</span><span class="token punctuation">,</span><span class="token value">12</span>
+<span class="token value">9</span><span class="token punctuation">,</span><span class="token value">10</span><span class="token punctuation">,</span><span class="token value">11</span><span class="token punctuation">,</span><span class="token value">12</span><span class="token punctuation">,</span><span class="token value">13</span>
+<span class="token value">10</span><span class="token punctuation">,</span><span class="token value">11</span><span class="token punctuation">,</span><span class="token value">12</span><span class="token punctuation">,</span><span class="token value">13</span><span class="token punctuation">,</span><span class="token value">14</span>
+<span class="token value">11</span><span class="token punctuation">,</span><span class="token value">12</span><span class="token punctuation">,</span><span class="token value">13</span><span class="token punctuation">,</span><span class="token value">14</span><span class="token punctuation">,</span><span class="token value">15</span>
+<span class="token value">12</span><span class="token punctuation">,</span><span class="token value">13</span><span class="token punctuation">,</span><span class="token value">14</span><span class="token punctuation">,</span><span class="token value">15</span><span class="token punctuation">,</span><span class="token value">16</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">awk</span> -F, <span class="token string">'&#123;sum = sum + $2&#125;END&#123;print sum&#125;'</span> ./test.csv
+<span class="token number">90</span>
+➜  Scripts <span class="token function">awk</span> -F, <span class="token string">'&#123;sum = sum + $2;print sum&#125;END&#123;print sum&#125;'</span> ./test.csv 
+<span class="token number">2</span>
+<span class="token number">5</span>
+<span class="token number">9</span>
+<span class="token number">14</span>
+<span class="token number">20</span>
+<span class="token number">27</span>
+<span class="token number">35</span>
+<span class="token number">44</span>
+<span class="token number">54</span>
+<span class="token number">65</span>
+<span class="token number">77</span>
+<span class="token number">90</span>
+<span class="token number">90</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>在<code>$2</code>后面添加<code>输出</code>,即可显示过程</p>
 </blockquote>
@@ -1020,23 +1335,47 @@ in the current version of Brian Kernighan&#39;s awk and numerous GNU-specific ex
 <blockquote>
 <p>其中<code>i</code>是索引</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts awk <span class="string">&#x27;BEGIN&#123;arr[0]=&quot;str1&quot;;arr[1]=&quot;str2&quot;; for(i in arr) print i&#125;&#x27;</span> </span><br><span class="line">0</span><br><span class="line">1</span><br><span class="line">➜  Scripts awk <span class="string">&#x27;BEGIN&#123;arr[0]=&quot;str1&quot;;arr[1]=&quot;str2&quot;; for(i in arr) print arr[i]&#125;&#x27;</span></span><br><span class="line">str1</span><br><span class="line">str2</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts awk <span class="string">&#x27;BEGIN&#123;arr[0]=str1;arr[1]=str2;print arr[0],arr[1]&#125;&#x27;</span>    </span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">awk</span> <span class="token string">'BEGIN&#123;arr[0]="str1";arr[1]="str2"; for(i in arr) print i&#125;'</span> 
+<span class="token number">0</span>
+<span class="token number">1</span>
+➜  Scripts <span class="token function">awk</span> <span class="token string">'BEGIN&#123;arr[0]="str1";arr[1]="str2"; for(i in arr) print arr[i]&#125;'</span>
+str1
+str2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">awk</span> <span class="token string">'BEGIN&#123;arr[0]=str1;arr[1]=str2;print arr[0],arr[1]&#125;'</span>    
+ <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <blockquote>
 <p>字符串<code>str1</code>和<code>str2</code>都被认为是<strong>变量</strong>, 导致打印是都是<strong>空</strong>,如果使用字符串,参考如下:</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts awk <span class="string">&#x27;BEGIN&#123;arr[0]=&quot;str1&quot;;arr[1]=&quot;str2&quot;;print arr[0],arr[1]&#125;&#x27;</span></span><br><span class="line">str1 str2</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">awk</span> <span class="token string">'BEGIN&#123;arr[0]="str1";arr[1]="str2";print arr[0],arr[1]&#125;'</span>
+str1 str2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="awk数组经典案例"><a href="#awk数组经典案例" class="headerlink" title="awk数组经典案例"></a><code>awk</code><strong>数组经典案例</strong></h3><p>从以下网址中获取<strong>域名</strong>并<strong>统计访问次数</strong></p>
 <ul>
-<li><strong>素材</strong><code>url.txt</code><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/</span><br><span class="line">http://www.open3d.org/docs/release/index.html</span><br><span class="line">https://leetcode-cn.com/</span><br><span class="line">https://github.com/</span><br><span class="line">https://realpython.com/beginners-guide-python-turtle</span><br><span class="line">https://python3-cookbook.readthedocs.io/zh_CN/latest/</span><br><span class="line">https://github.com/</span><br><span class="line">https://leetcode-cn.com/</span><br></pre></td></tr></table></figure></li>
+<li><strong>素材</strong><code>url.txt</code><pre class="line-numbers language-html" data-language="html"><code class="language-html">https://github.com/
+http://www.open3d.org/docs/release/index.html
+https://leetcode-cn.com/
+https://github.com/
+https://realpython.com/beginners-guide-python-turtle
+https://python3-cookbook.readthedocs.io/zh_CN/latest/
+https://github.com/
+https://leetcode-cn.com/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p><strong>解答</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts awk -F/ <span class="string">&#x27;&#123;array[$3]++&#125;END&#123;for(i in array)print i,array[i]&#125;&#x27;</span> ./url.txt | column -t</span><br><span class="line">python3-cookbook.readthedocs.io  1</span><br><span class="line">github.com                       3</span><br><span class="line">realpython.com                   1</span><br><span class="line">www.open3d.org                   1</span><br><span class="line">leetcode-cn.com                  2</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">awk</span> -F/ <span class="token string">'&#123;array[$3]++&#125;END&#123;for(i in array)print i,array[i]&#125;'</span> ./url.txt <span class="token operator">|</span> <span class="token function">column</span> -t
+python3-cookbook.readthedocs.io  <span class="token number">1</span>
+github.com                       <span class="token number">3</span>
+realpython.com                   <span class="token number">1</span>
+www.open3d.org                   <span class="token number">1</span>
+leetcode-cn.com                  <span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>该案例中索引不是<strong>整数</strong>,而是<strong>字符串</strong>,类似于<code>key-value</code>; 其中<code>i</code>对应<code>key</code>,即为域名, <code>array[i]</code>对应<code>value</code>,即为<strong>访问次数</strong></p>
 </blockquote>
 </li>
 <li><p><strong>输出结果排序</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts awk -F/ <span class="string">&#x27;&#123;array[$3]++&#125;END&#123;for(i in array)print i,array[i]&#125;&#x27;</span> ./url.txt | column -t | sort -rnk2</span><br><span class="line">github.com                       3</span><br><span class="line">leetcode-cn.com                  2</span><br><span class="line">www.open3d.org                   1</span><br><span class="line">realpython.com                   1</span><br><span class="line">python3-cookbook.readthedocs.io  1</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">awk</span> -F/ <span class="token string">'&#123;array[$3]++&#125;END&#123;for(i in array)print i,array[i]&#125;'</span> ./url.txt <span class="token operator">|</span> <span class="token function">column</span> -t <span class="token operator">|</span> <span class="token function">sort</span> -rnk2
+github.com                       <span class="token number">3</span>
+leetcode-cn.com                  <span class="token number">2</span>
+www.open3d.org                   <span class="token number">1</span>
+realpython.com                   <span class="token number">1</span>
+python3-cookbook.readthedocs.io  <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><code>sort</code>用于排序; 参考<a href="/2021/08/15/Linux-命令/">sort参数说明</a></p>
 </blockquote>
@@ -1063,7 +1402,8 @@ in the current version of Brian Kernighan&#39;s awk and numerous GNU-specific ex
 </div>
 <ul>
 <li><p><code>awk</code><strong>求和</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts awk <span class="string">&#x27;BEGIN&#123;for(i=1;i&lt;=10;i++)sum+=i;print sum&#125;&#x27;</span></span><br><span class="line">55</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">awk</span> <span class="token string">'BEGIN&#123;for(i=1;i&lt;=10;i++)sum+=i;print sum&#125;'</span>
+<span class="token number">55</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
 <li><p><code>if</code><strong>条件</strong></p>
 </li>
@@ -1093,15 +1433,52 @@ in the current version of Brian Kernighan&#39;s awk and numerous GNU-specific ex
 </div>
 <ul>
 <li><p>当磁盘<strong>使用率</strong>小于<code>50%</code>时,打印<code>disk is enough</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts df -h                                                                         </span><br><span class="line">Filesystem      Size  Used Avail Use% Mounted on</span><br><span class="line">udev            3.7G     0  3.7G   0% /dev</span><br><span class="line">tmpfs           776M  7.7M  769M   1% /run</span><br><span class="line">/dev/mmcblk0p2  118G   23G   95G  20% /</span><br><span class="line">tmpfs           3.8G     0  3.8G   0% /dev/shm</span><br><span class="line">tmpfs           5.0M     0  5.0M   0% /run/lock</span><br><span class="line">tmpfs           3.8G     0  3.8G   0% /sys/fs/cgroup</span><br><span class="line">/dev/loop0       49M   49M     0 100% /snap/core18/2127</span><br><span class="line">/dev/loop1       49M   49M     0 100% /snap/core18/2248</span><br><span class="line">/dev/loop2       29M   29M     0 100% /snap/snapd/13643</span><br><span class="line">/dev/loop5      128K  128K     0 100% /snap/ubuntu-mate-pi/11</span><br><span class="line">/dev/loop3      128K  128K     0 100% /snap/software-boutique/56</span><br><span class="line">/dev/loop6       16M   16M     0 100% /snap/ubuntu-mate-welcome/641</span><br><span class="line">/dev/loop4       29M   29M     0 100% /snap/snapd/13171</span><br><span class="line">/dev/loop7       16M   16M     0 100% /snap/ubuntu-mate-welcome/648</span><br><span class="line">/dev/mmcblk0p1  255M  119M  137M  47% /boot/firmware</span><br><span class="line">tmpfs           776M  4.0K  776M   1% /run/user/1000</span><br><span class="line"></span><br><span class="line">➜  Scripts df -h | awk -F<span class="string">&quot;[ %]+&quot;</span> <span class="string">&#x27;NR&gt;=2&#123;if($5&lt;50)print $6,&quot;disk enough[&quot;,$5,&quot;%]&quot;&#125;&#x27;</span> | column -t</span><br><span class="line">/dev            disk  enough[  0   %]</span><br><span class="line">/run            disk  enough[  1   %]</span><br><span class="line">/               disk  enough[  20  %]</span><br><span class="line">/dev/shm        disk  enough[  0   %]</span><br><span class="line">/run/lock       disk  enough[  0   %]</span><br><span class="line">/sys/fs/cgroup  disk  enough[  0   %]</span><br><span class="line">/boot/firmware  disk  enough[  47  %]</span><br><span class="line">/run/user/1000  disk  enough[  1   %]</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">df</span> -h                                                                         
+Filesystem      Size  Used Avail Use% Mounted on
+udev            <span class="token number">3</span>.7G     <span class="token number">0</span>  <span class="token number">3</span>.7G   <span class="token number">0</span>% /dev
+tmpfs           776M  <span class="token number">7</span>.7M  769M   <span class="token number">1</span>% /run
+/dev/mmcblk0p2  118G   23G   95G  <span class="token number">20</span>% /
+tmpfs           <span class="token number">3</span>.8G     <span class="token number">0</span>  <span class="token number">3</span>.8G   <span class="token number">0</span>% /dev/shm
+tmpfs           <span class="token number">5</span>.0M     <span class="token number">0</span>  <span class="token number">5</span>.0M   <span class="token number">0</span>% /run/lock
+tmpfs           <span class="token number">3</span>.8G     <span class="token number">0</span>  <span class="token number">3</span>.8G   <span class="token number">0</span>% /sys/fs/cgroup
+/dev/loop0       49M   49M     <span class="token number">0</span> <span class="token number">100</span>% /snap/core18/2127
+/dev/loop1       49M   49M     <span class="token number">0</span> <span class="token number">100</span>% /snap/core18/2248
+/dev/loop2       29M   29M     <span class="token number">0</span> <span class="token number">100</span>% /snap/snapd/13643
+/dev/loop5      128K  128K     <span class="token number">0</span> <span class="token number">100</span>% /snap/ubuntu-mate-pi/11
+/dev/loop3      128K  128K     <span class="token number">0</span> <span class="token number">100</span>% /snap/software-boutique/56
+/dev/loop6       16M   16M     <span class="token number">0</span> <span class="token number">100</span>% /snap/ubuntu-mate-welcome/641
+/dev/loop4       29M   29M     <span class="token number">0</span> <span class="token number">100</span>% /snap/snapd/13171
+/dev/loop7       16M   16M     <span class="token number">0</span> <span class="token number">100</span>% /snap/ubuntu-mate-welcome/648
+/dev/mmcblk0p1  255M  119M  137M  <span class="token number">47</span>% /boot/firmware
+tmpfs           776M  <span class="token number">4</span>.0K  776M   <span class="token number">1</span>% /run/user/1000
+
+➜  Scripts <span class="token function">df</span> -h <span class="token operator">|</span> <span class="token function">awk</span> -F<span class="token string">"[ %]+"</span> <span class="token string">'NR>=2&#123;if($5&lt;50)print $6,"disk enough[",$5,"%]"&#125;'</span> <span class="token operator">|</span> <span class="token function">column</span> -t
+/dev            disk  enough<span class="token punctuation">[</span>  <span class="token number">0</span>   %<span class="token punctuation">]</span>
+/run            disk  enough<span class="token punctuation">[</span>  <span class="token number">1</span>   %<span class="token punctuation">]</span>
+/               disk  enough<span class="token punctuation">[</span>  <span class="token number">20</span>  %<span class="token punctuation">]</span>
+/dev/shm        disk  enough<span class="token punctuation">[</span>  <span class="token number">0</span>   %<span class="token punctuation">]</span>
+/run/lock       disk  enough<span class="token punctuation">[</span>  <span class="token number">0</span>   %<span class="token punctuation">]</span>
+/sys/fs/cgroup  disk  enough<span class="token punctuation">[</span>  <span class="token number">0</span>   %<span class="token punctuation">]</span>
+/boot/firmware  disk  enough<span class="token punctuation">[</span>  <span class="token number">47</span>  %<span class="token punctuation">]</span>
+/run/user/1000  disk  enough<span class="token punctuation">[</span>  <span class="token number">1</span>   %<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>统计语句中单词长度小于<code>6</code>的单词,并显示该单词</p>
 <ul>
-<li><strong>素材</strong><code>Avatar.txt</code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">If you wish to survive you need to cultivate a strong mental attitude.</span><br></pre></td></tr></table></figure></li>
-<li><strong>答案</strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts awk -F<span class="string">&quot;[ .,]&quot;</span> <span class="string">&#x27;&#123;for(i=1;i&lt;NF;i++)if(length($i)&lt;6)print $i&#125;&#x27;</span> ./Avatar.txt</span><br><span class="line">If</span><br><span class="line">you</span><br><span class="line">wish</span><br><span class="line">to</span><br><span class="line">you</span><br><span class="line">need</span><br><span class="line">to</span><br><span class="line">a</span><br><span class="line">12345</span><br></pre></td></tr></table></figure>
+<li><strong>素材</strong><code>Avatar.txt</code><pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">If you wish to survive you need to cultivate a strong mental attitude.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><strong>答案</strong><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token function">awk</span> -F<span class="token string">"[ .,]"</span> <span class="token string">'&#123;for(i=1;i&lt;NF;i++)if(length($i)&lt;6)print $i&#125;'</span> ./Avatar.txt
+If
+you
+wish
+to
+you
+need
+to
+a
+<span class="token number">12345</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><code>length($i)</code>用于求取字符长度;<code>length()</code>用于表示整行字符长度</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  Scripts <span class="built_in">echo</span> 12345 67890 | awk <span class="string">&#x27;&#123;print length()&#125;&#x27;</span></span><br><span class="line">11</span><br></pre></td></tr></table></figure></blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">➜  Scripts <span class="token builtin class-name">echo</span> <span class="token number">12345</span> <span class="token number">67890</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'&#123;print length()&#125;'</span>
+<span class="token number">11</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></blockquote>
 </li>
 </ul>
 </li>

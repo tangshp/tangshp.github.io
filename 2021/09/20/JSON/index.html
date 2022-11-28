@@ -17,7 +17,7 @@
   localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
   translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
   noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
   copy: {
     success: '复制成功',
     error: '复制错误',
@@ -153,26 +153,74 @@
 <h1 id="Json-数组"><a href="#Json-数组" class="headerlink" title="Json 数组"></a>Json 数组</h1><p>Json 数组使用 [] 表示，[] 里边是元素，元素和元素之间使用逗号间隔，最后一个元素后边没有逗号，一个 Json 数组中支持同时存在多种不同类型的成员，包括：<code>整形</code>、 <code>浮点</code>、 <code>字符串</code>、 <code>布尔类型</code>、 json数组、 <code>json对象</code>、 <code>空值-null</code>。由此可见 <code>Json</code> 数组比起 <code>C/C++</code> 数组要灵活很多。</p>
 <ul>
 <li><p>Json 数组中的元素数据类型一致</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 整形</span></span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="comment">// 字符串</span></span><br><span class="line">[<span class="string">&quot;luffy&quot;</span>, <span class="string">&quot;sanji&quot;</span>, <span class="string">&quot;zoro&quot;</span>, <span class="string">&quot;nami&quot;</span>, <span class="string">&quot;robin&quot;</span>]</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-JSON" data-language="JSON"><code class="language-JSON">&#x2F;&#x2F; 整形
+[1,2,3,4,5]
+&#x2F;&#x2F; 字符串
+[&quot;luffy&quot;, &quot;sanji&quot;, &quot;zoro&quot;, &quot;nami&quot;, &quot;robin&quot;]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>Json 数组中的元素数据类型不一致</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">12</span>, <span class="number">13.34</span>, <span class="literal">true</span>, <span class="literal">false</span>, <span class="string">&quot;hello,world&quot;</span>, <span class="literal">null</span>]</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-JSON" data-language="JSON"><code class="language-JSON">[12, 13.34, true, false, &quot;hello,world&quot;, null]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>Json 数组中的数组嵌套使用</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    [<span class="string">&quot;cat&quot;</span>, <span class="string">&quot;dog&quot;</span>, <span class="string">&quot;panda&quot;</span>, <span class="string">&quot;beer&quot;</span>, <span class="string">&quot;rabbit&quot;</span>],</span><br><span class="line">    [<span class="string">&quot;北京&quot;</span>, <span class="string">&quot;上海&quot;</span>, <span class="string">&quot;天津&quot;</span>, <span class="string">&quot;重庆&quot;</span>],</span><br><span class="line">    [<span class="string">&quot;luffy&quot;</span>, <span class="string">&quot;boy&quot;</span>, <span class="number">19</span>]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-JSON" data-language="JSON"><code class="language-JSON">[
+    [&quot;cat&quot;, &quot;dog&quot;, &quot;panda&quot;, &quot;beer&quot;, &quot;rabbit&quot;],
+    [&quot;北京&quot;, &quot;上海&quot;, &quot;天津&quot;, &quot;重庆&quot;],
+    [&quot;luffy&quot;, &quot;boy&quot;, 19]
+]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>Json 数组和对象嵌套使用</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;luffy&quot;</span>:&#123;</span><br><span class="line">            <span class="attr">&quot;age&quot;</span>:<span class="number">19</span>,</span><br><span class="line">            <span class="attr">&quot;father&quot;</span>:<span class="string">&quot;Monkey·D·Dragon&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;grandpa&quot;</span>:<span class="string">&quot;Monkey D Garp&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;brother1&quot;</span>:<span class="string">&quot;Portgas D Ace&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;brother2&quot;</span>:<span class="string">&quot;Sabo&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-JSON" data-language="JSON"><code class="language-JSON">[
+    &#123;
+        &quot;luffy&quot;:&#123;
+            &quot;age&quot;:19,
+            &quot;father&quot;:&quot;Monkey·D·Dragon&quot;,
+            &quot;grandpa&quot;:&quot;Monkey D Garp&quot;,
+            &quot;brother1&quot;:&quot;Portgas D Ace&quot;,
+            &quot;brother2&quot;:&quot;Sabo&quot;
+        &#125;
+    &#125;
+]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 <h1 id="Json-对象"><a href="#Json-对象" class="headerlink" title="Json 对象"></a>Json 对象</h1><p>Json 对象使用 {} 来描述，每个 Json 对象中可以存储若干个元素，每一个元素对应一个键值对（key：value 结构），元素和元素之间使用逗号间隔，最后一个元素后边没有逗号。对于每个元素中的键值对有以下细节需要注意：</p>
-<p>键值（key）必须是字符串，位于同一层级的键值不要重复（因为是通过键值取出对应的 value 值）<br>value 值的类型是可选的，可根据实际需求指定，可用类型包括：<code>整形</code>、 <code>浮点</code>、 <code>字符串</code>、 <code>布尔类型</code>、 <code>json数组</code>、 <code>json对象</code>、 <code>空值-null</code>。<br>使用 Json 对象描述一个人的信息:<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;Name&quot;</span>:<span class="string">&quot;Ace&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;Sex&quot;</span>:<span class="string">&quot;man&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;Age&quot;</span>:<span class="number">20</span>,</span><br><span class="line">    <span class="attr">&quot;Family&quot;</span>:&#123;</span><br><span class="line">        <span class="attr">&quot;Father&quot;</span>:<span class="string">&quot;Gol·D·Roger&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;Mother&quot;</span>:<span class="string">&quot;Portgas·D·Rouge&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;Brother&quot;</span>:[<span class="string">&quot;Sabo&quot;</span>, <span class="string">&quot;Monkey D. Luffy&quot;</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">&quot;IsAlive&quot;</span>:<span class="literal">false</span>,</span><br><span class="line">    <span class="attr">&quot;Comment&quot;</span>:<span class="string">&quot;yyds&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>键值（key）必须是字符串，位于同一层级的键值不要重复（因为是通过键值取出对应的 value 值）<br>value 值的类型是可选的，可根据实际需求指定，可用类型包括：<code>整形</code>、 <code>浮点</code>、 <code>字符串</code>、 <code>布尔类型</code>、 <code>json数组</code>、 <code>json对象</code>、 <code>空值-null</code>。<br>使用 Json 对象描述一个人的信息:<br><pre class="line-numbers language-JSON" data-language="JSON"><code class="language-JSON">&#123;
+    &quot;Name&quot;:&quot;Ace&quot;,
+    &quot;Sex&quot;:&quot;man&quot;,
+    &quot;Age&quot;:20,
+    &quot;Family&quot;:&#123;
+        &quot;Father&quot;:&quot;Gol·D·Roger&quot;,
+        &quot;Mother&quot;:&quot;Portgas·D·Rouge&quot;,
+        &quot;Brother&quot;:[&quot;Sabo&quot;, &quot;Monkey D. Luffy&quot;]
+    &#125;,
+    &quot;IsAlive&quot;:false,
+    &quot;Comment&quot;:&quot;yyds&quot;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
 <h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><p>通过上面的介绍可用看到，Json 的结构虽然简单，但是进行嵌套之后就可以描述很复杂的事情，在项目开发过程中往往需要我们根据实际需求自己定义 Json 格式用来存储项目数据。</p>
 <p>另外，如果需要将 Json 数据持久化到磁盘文件中，需要注意一个问题：<code>在一个 Json 文件中只能有一个 Json 数组或者 Json 对象的根节点，不允许同时存储多个并列的根节点</code>。下面举例说明：</p>
 <ul>
-<li>错误的写法<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// test.json</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;name&quot;</span>:<span class="string">&quot;luffy&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;age&quot;</span>:<span class="number">19</span></span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;user&quot;</span>:<span class="string">&quot;ace&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;passwd&quot;</span>:<span class="string">&quot;123456&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>错误的写法<pre class="line-numbers language-JSON" data-language="JSON"><code class="language-JSON">&#x2F;&#x2F; test.json
+&#123;
+    &quot;name&quot;:&quot;luffy&quot;,
+    &quot;age&quot;:19
+&#125;
+&#123;
+    &quot;user&quot;:&quot;ace&quot;,
+    &quot;passwd&quot;:&quot;123456&quot;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 错误原因：<code>在一个 Json 文件中有两个并列的 Json 根节点（并列包含 Json 对象和 Json 对象、Json 对象和 Json 数组、Json 数组和 Json 数组），根节点只能有一个。</code></li>
-<li>正确的写法<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// test.json</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;Name&quot;</span>:<span class="string">&quot;Ace&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;Sex&quot;</span>:<span class="string">&quot;man&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;Age&quot;</span>:<span class="number">20</span>,</span><br><span class="line">    <span class="attr">&quot;Family&quot;</span>:&#123;</span><br><span class="line">        <span class="attr">&quot;Father&quot;</span>:<span class="string">&quot;Gol·D·Roger&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;Mother&quot;</span>:<span class="string">&quot;Portgas·D·Rouge&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;Brother&quot;</span>:[<span class="string">&quot;Sabo&quot;</span>, <span class="string">&quot;Monkey D. Luffy&quot;</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">&quot;IsAlive&quot;</span>:<span class="literal">false</span>,</span><br><span class="line">    <span class="attr">&quot;Comment&quot;</span>:<span class="string">&quot;yyds&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>正确的写法<pre class="line-numbers language-JSON" data-language="JSON"><code class="language-JSON">&#x2F;&#x2F; test.json
+&#123;
+    &quot;Name&quot;:&quot;Ace&quot;,
+    &quot;Sex&quot;:&quot;man&quot;,
+    &quot;Age&quot;:20,
+    &quot;Family&quot;:&#123;
+        &quot;Father&quot;:&quot;Gol·D·Roger&quot;,
+        &quot;Mother&quot;:&quot;Portgas·D·Rouge&quot;,
+        &quot;Brother&quot;:[&quot;Sabo&quot;, &quot;Monkey D. Luffy&quot;]
+    &#125;,
+    &quot;IsAlive&quot;:false,
+    &quot;Comment&quot;:&quot;yyds&quot;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 <p><code>在上面的例子中通过Json对象以及Json数组的嵌套描述了一个人的身份信息，并且根节点只有一个就是Json对象，如果还需要使用Json数组或者Json对象描述其他信息，需要将这些信息写入到其他文件中，不要和这个Json对象并列写入到同一个文件里边，切记！！！</code></p>
